@@ -1,20 +1,27 @@
 ---
 layout: page
-title: "Main page"
+title: "Det Dovne Hjem"
 ---
 
-# Velkommen...
-s
-- Timothy Atkins
-  - Craig Schneider
-    - Lydia Mendoza
-      - Olivia Long
-    - Cecilia Welch
-- Georgie Barton
-  - Charlie Cross
-    - Earl Caldwell
-- Jean Stevenson
-  - Rachel Wright
-    - Flora Barnes
-  - Nellie Freeman
-- Dennis Mathis
+# PRJ2 | Gruppe 1
+
+## Vejleder
+
+- Carsten Eie Frigaard
+
+- cef@ase.au.dk
+
+- Edison 311
+
+## Gruppen
+
+- Malte Toft Bro
+  - Mødeleder
+- Adam Ryager Høj
+  - Kontaktperson :left_right_arrow: vejleder
+- Rasmus Kahr
+- Mahmoud Saleh Karzoun
+- Magnus Gjøttrup Kristensen
+  - Referent
+- Asger Mørk Ladekjær
+- Mojtaba Turabi
