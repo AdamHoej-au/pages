@@ -1,8 +1,3 @@
----
-layout: page
-title: "Det Dovne Hjem"
----
-
 # PRJ2 | Gruppe 1
 
 ## Vejleder
