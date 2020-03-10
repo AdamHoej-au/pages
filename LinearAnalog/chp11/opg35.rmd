@@ -47,11 +47,11 @@ Denne funktion har én pol: $p_1 = -1000\; rad/s$
 For at finde impulsresponenet:
 
 $$
-v\_{impulse}(t)=
+v_{impulse}(t)=
 \mathcal{L}^{-1}\left\{
 T_V(s)
 \right\}
-=v\_{impulse}(t)=
+=v_{impulse}(t)=
 \mathcal{L}^{-1}\left\{
 \frac{-2000}{s+1000}
 \right\}
@@ -59,5 +59,5 @@ $$
 
 Dette medfører:
 $$
-v\_{impulse}(t)= -2000 e^{-1000t} u(t)
+v_{impulse}(t)= -2000 e^{-1000t} u(t)
 $$

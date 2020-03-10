@@ -43,7 +43,7 @@ pole_zero_plot(x_zero, y_zero, x_pole, y_pole,150)
 
 Ved at gøre følgende:
 $$
-v\_{impulse}(t)=
+v_{impulse}(t)=
 \mathcal{L}^{-1}\left\{
 T_V(s)
 \right\}
@@ -55,7 +55,7 @@ $$
 Dette giver:
 $$
 \boxed{
-v\_{impulse}(t) =
+v_{impulse}(t) =
 0.5785 \cdot \left(\delta(t)+58.47e^{-83.33t}\right)\cdot u(t)
 }$$
 
@@ -64,7 +64,7 @@ v\_{impulse}(t) =
 Ved at gøre følgende:
 
 $$
-v\_{step}(t)=\mathcal{L}^{-1}\left\{
+v_{step}(t)=\mathcal{L}^{-1}\left\{
 \frac{1}{s} \cdot H(s)
 \right\}
 =
@@ -81,7 +81,7 @@ Dette giver:
 
 $$
 \boxed{
-v\_{step}(t) = (0.5875\cdot(1.702-0.702e^{-83.33t}))\cdot u(t)
+v_{step}(t) = (0.5875\cdot(1.702-0.702e^{-83.33t}))\cdot u(t)
 }
 $$
 
