@@ -1,0 +1,143 @@
+> Find the impulse response at v_2(t) in Figure P11–17. Find the circuit’s step response.
+
+### Transfer function
+
+Da det er en spændingsdeler gør flg. sig gældende - _efter en laplacetransformation_:
+
+$$V_2(s) = V_1(s)\;\cdot\; \frac{R_2+\frac{1}{Cs}}{R_1+R_2+\frac{1}{Cs}}$$
+
+Omskrevet[^1]:
+$$\underset{Y(s)}{\underbrace{V_2(s)}} = \underset{X(s)}{\underbrace{V_1(s)}}\;\cdot\; \underset{T_V(s) \; \lor \; H(s)}{\underbrace{\frac{R_2Cs+1}{R_1Cs+R_2Cs+1}}}
+$$
+
+### Transfer function
+
+$$
+T_V(s)=\frac{R_2Cs+1}{R_1Cs+R_2Cs+1}
+$$
+
+KomponentID:
+
+$$
+R_1 = 33k\Omega \cdot\\
+R_2 = 47k\Omega
+$$
+
+$$
+T_V(s)=\frac{47k\Omega \cdot 0.15 \mu F \cdot s+1}{33k\Omega \cdot0.15 \mu F s+47k\Omega \cdot 0.15 \mu F s+1} =
+\frac{0.5875\cdot(s+141.8)}{s+83.33}
+$$
+Her ses det at et enkelt nulpunkt er at finde $z_1 = -141.8 \; rad/s$ og en enkelt pol $p_1 = -83.33 \; rad/s$
+
+```{r, echo = FALSE}
+
+x_zero <- c(-141-8)
+y_zero <- c(0)
+x_pole <- c(-83.33)
+y_pole <- c(0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,150)
+```
+
+### Impulserespons
+
+Ved at gøre følgende:
+$$
+v\_{impulse}(t)=
+\mathcal{L}^{-1}\left\{
+T_V(s)
+\right\}
+=
+\mathcal{L}^{-1}\left\{
+\frac{0.5875\cdot(s+141.8)}{s+83.33}
+\right\}
+$$
+Dette giver:
+$$
+\boxed{
+v\_{impulse}(t) =
+0.5785 \cdot \left(\delta(t)+58.47e^{-83.33t}\right)\cdot u(t)
+}$$
+
+### Steprespons
+
+Ved at gøre følgende:
+
+$$
+v\_{step}(t)=\mathcal{L}^{-1}\left\{
+\frac{1}{s} \cdot H(s)
+\right\}
+=
+\mathcal{L}^{-1}\left\{
+\frac{1}{s} \cdot T_V(s)
+\right\}
+=
+\mathcal{L}^{-1}\left\{
+\frac{0.5875\cdot(s+141.8)}{s^2+83.33s}
+\right\}
+$$
+
+Dette giver:
+
+$$
+\boxed{
+v\_{step}(t) = (0.5875\cdot(1.702-0.702e^{-83.33t}))\cdot u(t)
+}
+$$
+
+### Driving point impedans
+
+Vi har følgende KVL loop:
+
+$$
+v_1(t)=v_r+v_r+v_c
+$$
+Dette laplace transformeres:
+
+$$
+\mathcal{L}^{-1}\left\{
+v_1(t)
+\right\}
+=
+\mathcal{L}^{-1}\left\{
+v_{R1}(t)
+\right\} +
+\mathcal{L}^{-1}\left\{
+v_{R2}(t)
+\right\} +
+\mathcal{L}^{-1}\left\{
+v_C(t)
+\right\}
+$$
+
+og giver:
+$$
+V_1(s) = V_{R1}(s)+V_{R2}(s)+V_C(s)
+$$
+
+En let omskrivning
+
+$$
+V_1(s)= I(s)(R_1+R_2)+ \frac{1}{Cs} I(s)
+$$
+
+Dermed:
+
+$$
+\frac{V_1(s)}{I(s)} = R_1+R_2 + \frac{1}{Cs}
+$$
+
+og vi har driving point impedansen:
+
+$$
+Z(s) = \frac{CR_1s+CR_2s+1}{Cs}
+$$
+
+og vi har driving point impedansen / med værdier!:
+$$
+\boxed{
+Z(s) = \frac{80000\cdot(s+83.33)}{s}
+}
+$$
+
+
+[^1]: Er $T_V(s) = H(s)$ ?

@@ -1,0 +1,47 @@
+> Find the driving point impedance seen by the voltage source in Figure P11–3 and the voltage transfer function T_V(s) = V_2(s) / V_1(s).
+
+### Driving point impedans:
+
+Dette er simpelt - hvad er $V_1(s)$ ?
+
+$$
+V_1(s)= V_L + V_R + V_C
+$$
+
+Omskrevet:
+
+$$
+V_1(s)= I(s)\left( L s + R + \frac{1}{Cs}\right)
+$$
+
+Dermed:
+
+$$
+\frac{V_1(s)}{I(s)}= L s  + R + \frac{1}{Cs}
+$$
+
+Omskrevet:
+
+$$
+Z(s)=\frac{V_1(s)}{I(s)}= \frac{LCs^2 + RCs +1}{Cs}
+$$
+
+### Transfer function:
+
+Da det er en spændingsdeler gælder flg.:
+
+$$
+T_V(s)=\frac{R}{Ls + \frac{1}{Cs}+R}
+$$
+
+Omskrevet:
+
+$$
+T_V(s)=\frac{R}{\frac{LCs^2 + RCs +1}{Cs}}
+$$
+
+$$
+\boxed{
+T_V(s)=\frac{RCs}{LCs^2 + RCs +1}
+}
+$$

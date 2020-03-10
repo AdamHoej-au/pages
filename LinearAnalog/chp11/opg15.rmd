@@ -1,0 +1,90 @@
+> Find the voltage transfer function T_V(s) = V_2(s)/V_1(s) of the cascade connection in Figure P11–15. Locate the poles and zeros of the transfer function
+
+### Transfer function
+
+KomponentID:
+
+$C_1 = 0.047 \mu F \;$
+$C_2 = 0.1 \mu F \;$
+
+$R_1 = 22k\Omega\;$
+$R_2 = 1k\Omega  \;$
+$R_3 = 10k\Omega  \;$
+
+#### Venstresiden
+Denne del af kredsløbet er en spændingsdeler bestående af $C_1$ og $R_1$
+
+$$
+v_1(t) = \frac{R_1}{R_1+C_1}
+$$
+
+Laplacetransformationen giver:
+$$
+T_{Vdivider}(s) = \frac{R_1}{R_1+\frac{1}{C_1s}}
+$$
+
+#### Højresiden
+Operationsforstærkeren er koblet som en **ikke** inverterende forstærker. Derfor:
+$$
+T_{Vopamp}(s) = \frac{Z_1+Z_2}{Z_2}
+$$
+
+Hvor:
+$$
+Z_1 = R_3 \quad Z_2 = \frac{1}{C_2s}+R_2
+$$
+
+
+Dermed:
+
+$$
+T_{Vopamp}(s)=\frac{R_3+\frac{1}{C_2s}+R_2}{\frac{1}{C_2s}+R_2}
+$$
+
+Med de rigtige værdier indsat:
+
+$$
+T_{Vdivider}(s)= \frac{22k\Omega}{22k\Omega+\frac{1}{0.047\mu F s}} = \frac{s}{s+967.1}
+\\
+T_{Vopamp}(s)=\frac{10k\Omega+\frac{1}{0.1 \mu F s}+1k\Omega }{\frac{1}{0.1 \mu F s}+1k\Omega } = \frac{11(s+909.1)}{s+10000}
+$$
+
+Hvorfor: 
+
+$$
+T_V(s) = T_{Vdivider}(s) \cdot T_{Vopamp}(s)  
+$$
+
+$$
+T_V(s) = \frac{C_1 R_1 s \cdot(C_2(R_2+R_2)s+1)}{(C_2R_2s+1)(C_1R_1s+1)}
+$$
+
+$$
+T_V(s) = \frac{s}{s+967.1} \cdot \frac{11(s+909.1)}{s+10000} 
+$$
+
+$$
+\boxed{
+T_V(s) = \frac{11s(s+909.1)}{(s+967.1)(s+10000)}
+}
+$$
+Det ses at funktionen har ét nulpunkt: $Z_1 = -909.1 \; rad/s$
+
+Desuden er der to poler: $p_1 = -967.1\; rad/s \quad p_2 = -10000\; rad/s$
+
+
+```{r, echo = FALSE,out.height=c('50%', '50%'), fig.show='hold'}
+
+x_zero <- c(-909.1)
+y_zero <- c(0)
+x_pole <- c(-967.1,-10000)
+y_pole <- c(0,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,1000)
+
+x_zero <- c(-909.1)
+y_zero <- c(0)
+x_pole <- c(-967.1,-10000)
+y_pole <- c(0,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,10000)
+```
+

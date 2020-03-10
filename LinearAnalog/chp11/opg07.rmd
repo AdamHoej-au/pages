@@ -1,0 +1,33 @@
+ > Find the driving point impedance seen by the voltage source in Figure P11–7 and the voltage transfer function. T_V(s) = V_2(s)/V_1(s).
+
+
+### Driving point impedans
+
+ Da det er en operationsforstærker, antages det at denne er idéel og dermed er $\boxed{Z_{in} =\infty}$.
+
+
+### Transfer function.
+
+Det er en non-inverterende opstilling - derfor gælder flg.:
+
+$$
+T_V(s) = \frac{Z_1+Z_2}{Z_2}
+$$
+Hvor:
+$$
+Z_1 = 2R \quad Z_2 = 2R||C
+$$
+$$
+Z_2 = \frac{2R \cdot \frac{1}{Cs}}{2R+\frac{1}{Cs}}
+$$
+Derfor:
+$$
+T_V(s)=\frac{2R+\frac{2R\frac{1}{Cs}}{2R+\frac{1}{Cs}}}{\frac{2R\frac{1}{Cs}}{2R+\frac{1}{Cs}}}
+$$
+
+Omskrevet:
+$$
+\boxed{
+T_V(s)=2RCs+2
+}
+$$

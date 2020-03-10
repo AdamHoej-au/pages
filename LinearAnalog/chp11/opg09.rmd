@@ -1,0 +1,31 @@
+> Find the voltage transfer function T_V(s) = V_2(s)/V_1(s) in Figure P11–9.
+
+### Transfer function
+
+Dette er to spændingsdelere i serie:
+
+Deler 1:
+$$
+H_1(s) = \frac{R}{L+R}
+$$
+
+Deler 2
+$$
+H_2(s) = \frac{\frac{1}{Cs}}{\frac{1}{Cs}+R}
+$$
+
+
+Dermed kan $T_V(s)$ findes ved
+$$
+T_V(s)= H_1(s)\cdot H_2(s)
+$$
+Altså
+$$
+T_V(s) = \frac{R}{Ls+R} \cdot \frac{\frac{1}{Cs}}{\frac{1}{Cs}+R}
+$$
+
+$$
+\boxed{
+T_V(s) = \frac{R}{CLRs^2+(CR^2+L)s+R}
+}
+$$
