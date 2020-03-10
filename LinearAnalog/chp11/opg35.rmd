@@ -1,0 +1,63 @@
+> The circuit in Figure P11–35 is in the steady state with v_1(t) =  10 cos 500t V. Find v_2SS(t).  
+> Repeat for v_1(t) = 10 cos 1 kt V, and for v1(t) = 10 cos 10 kt V .  
+> Where is the pole located?
+
+
+KomponentID:
+
+$$
+R_1 = 1k\Omega\\
+R_2 = 2k\Omega\\
+C = 0.5 \mu F
+$$
+
+### Transfer function
+
+Da det er en inverterende opsætning gælder flg. 
+
+$$
+T_V(s) = \frac{-Z_2}{Z_1}
+$$
+
+Hvor 
+$$
+Z_1 = R_1 \quad Z_2 = \frac{R_2 \cdot \frac{1}{Cs}}{R_2+\frac{1}{Cs}}
+$$
+
+Derfor:
+
+$$
+T_V(s) = \frac{-\left( \frac{R_2 \cdot \frac{1}{Cs}}{R_2+\frac{1}{Cs}} \right)}{R_1}
+$$
+Medfører: 
+$$
+T_V(s)= \frac{-R_2}{R_1(R_2Cs+1)}
+$$
+
+Med værdierne indsat:
+
+$$
+T_V(s) = \frac{-2000}{s+1000}
+$$
+
+Denne funktion har én pol: $p_1 = -1000\; rad/s$
+
+### Impulse response
+
+For at finde impulsresponenet:
+
+$$
+v\_{impulse}(t)=
+\mathcal{L}^{-1}\left\{
+T_V(s)
+\right\}
+=v\_{impulse}(t)=
+\mathcal{L}^{-1}\left\{
+\frac{-2000}{s+1000}
+\right\}
+$$
+
+Dette medfører:
+$$
+v\_{impulse}(t)= -2000 e^{-1000t} u(t)
+$$

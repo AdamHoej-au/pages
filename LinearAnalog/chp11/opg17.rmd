@@ -19,8 +19,9 @@ $$
 KomponentID:
 
 $$
-R_1 = 33k\Omega \cdot\\
-R_2 = 47k\Omega
+R_1 = 33k\Omega\\
+R_2 = 47k\Omega\\
+C = 0.15 \mu F
 $$
 
 $$

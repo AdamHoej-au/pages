@@ -101,3 +101,9 @@ Når der snakkes op-amp konfigurationer, refereres der til de her to:
 ![](figs/1117.png)
 ```{r child = "chp11/opg17.Rmd"}
 ```
+
+## Opgave 35
+
+![](figs/1135.png)
+```{r child = "chp11/opg35.Rmd"}
+```
