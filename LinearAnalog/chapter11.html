@@ -432,6 +432,7 @@ summary {
 <li><a href="#opgave-35">Opgave 35</a>
 <ul>
 <li><a href="#transfer-function-5">Transfer function</a></li>
+<li><a href="#impulse-response">Impulse response</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -743,6 +744,28 @@ Z_1 = R_1 \quad Z_2 = \frac{R_2 \cdot \frac{1}{Cs}}{R_2+\frac{1}{Cs}}
 T_V(s) = \frac{-\left( \frac{R_2 \cdot \frac{1}{Cs}}{R_2+\frac{1}{Cs}} \right)}{R_1}
 \]</span> Medfører: <span class="math display">\[
 T_V(s)= \frac{-R_2}{R_1(R_2Cs+1)}
+\]</span></p>
+<p>Med værdierne indsat:</p>
+<p><span class="math display">\[
+T_V(s) = \frac{-2000}{s+1000}
+\]</span></p>
+<p>Denne funktion har én pol: <span class="math inline">\(p_1 = -1000\; rad/s\)</span></p>
+</div>
+<div id="impulse-response" class="section level3">
+<h3>Impulse response</h3>
+<p>For at finde impulsresponenet:</p>
+<p><span class="math display">\[
+v\_{impulse}(t)=
+\mathcal{L}^{-1}\left\{
+T_V(s)
+\right\}
+=v\_{impulse}(t)=
+\mathcal{L}^{-1}\left\{
+\frac{-2000}{s+1000}
+\right\}
+\]</span></p>
+<p>Dette medfører: <span class="math display">\[
+v\_{impulse}(t)= -2000 e^{-1000t} u(t)
 \]</span></p>
 </div>
 </div>
