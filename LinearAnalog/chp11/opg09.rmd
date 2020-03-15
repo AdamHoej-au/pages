@@ -1,5 +1,7 @@
 > Find the voltage transfer function T_V(s) = V_2(s)/V_1(s) in Figure P11–9.
 
+**FORKERT!!!!!**
+
 ### Transfer function
 
 Dette er to spændingsdelere i serie:
@@ -29,3 +31,8 @@ $$
 T_V(s) = \frac{R}{CLRs^2+(CR^2+L)s+R}
 }
 $$
+
+
+**KORREKT!**
+
+### $T_V(s)$

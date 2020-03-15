@@ -1,0 +1,20 @@
+$$ 
+H(s) = \frac{s + 9}{s^2 + 10s + 2}
+$$
+
+```{r, echo = FALSE}
+Fs <- function(s) (s+9)/(s^2+10*s+2)
+pulsLi <- invlap(Fs, 0, 2*pi, 100)
+
+Fs <- function(s) (1/s) * ((s+9)/(s^2+10*s+2))
+stepLi <- invlap(Fs, 0, 2*pi, 100)
+
+x_zero <- c(-9)
+y_zero <- c(0)
+x_pole <- rep(-sqrt(102),2)
+y_pole <- c(1,-1)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,12)
+lines(pulsLi,col="Blue")
+lines(stepLi,col="red")
+```
+

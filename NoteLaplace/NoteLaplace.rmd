@@ -1,0 +1,193 @@
+---
+title: "Note laplace"
+author: "Adam Høj - 201803767"
+output:
+  html_document:
+    theme: darkly
+    fig_width: 6
+    fig_height: 6
+    fig_caption: true 
+---
+```{r, echo=FALSE}
+library(pracma)
+
+make_function <- function(args, body, env = parent.frame()) {
+  args <- as.pairlist(args)
+
+  eval(call("function", args, body), env)
+}
+stepplot <- function(expr, xmax, n = 1000, 
+                   env = parent.frame()) {
+  f <- make_function(alist(t = ), substitute(  
+  (t < 0) * (0) + (0 <= t) * expr), ## Stepfunktionen ganges på..
+  env)
+
+  t <- seq(-0.5, xmax, length = n)
+  y <- f(t)
+  plot(t, y, type = "l", xlab = "t [s]", ylab = "f(t)",col = "red",lty=1, main= deparse(substitute(expr)),panel.first = grid())
+  abline(v = 0, h = 0,lty=2)
+ 
+}
+pole_zero_plot <- function(x_zero_, y_zero_, x_pole_, y_pole_, range) {
+
+  ## Zeroes:
+  
+
+x_pole = x_pole_
+y_pole = y_pole_
+x_zero = x_zero_
+y_zero = y_zero_
+minMax <- c(-range,range)
+
+  # RUN ME!
+  par(lab = c(10, 10, 5),pty="s")
+  plot(
+      x_pole,
+      y_pole,
+      pch = 4, cex = 2,
+  xlim = c(minMax[1], minMax[2]), ylim = c(minMax[1], minMax[2]), panel.first = grid(),
+  xlab = "Real", ylab = "Imaginær")
+  if (0 < length(x_zero)) {
+    points(x_zero, y_zero, pch = 1, cex = 2) ## ZERO PLOT
+    text(x_zero, y_zero, labels = seq(1, length(y_zero)), pos = 1) # Zero text
+  }
+  ## Konvergens rektankel.
+  rect(max(x_pole), minMax[1]-5, minMax[2]+5, minMax[2]+5, density = 8, angle = 45, col = rgb(0, 0, 0, alpha = 0.2))
+  rect(max(x_pole), minMax[1]-5, minMax[2]+5, minMax[2]+5, density = 8, angle = -45, col = rgb(0, 0, 0, alpha = 0.2))
+  
+  mtext(paste("Konvergens: ", round(max(x_pole),digits=4)), side=1, line=3.5, at=9)
+
+  text(x_pole, y_pole, labels = seq(1, length(y_pole)), pos = 1) # Pole text
+  ## Aksepile.
+  arrows(minMax[1], 0, minMax[2], 0, lwd = 1, length = 0.15)
+  arrows(0, minMax[1] - 5, 0, minMax[2], lwd = 1, length = 0.15)
+  #End of assignment
+}
+```
+
+
+
+
+
+
+
+
+
+
+# {.tabset .tabset-fade .tabset-pills} 
+
+
+## Opgave 9 {.tabset .tabset-fade}
+
+
+### Opgave A {.tabset .tabset-fade}
+
+> Udfra følgende overføringsfunktioner, angiv pol-nulpunktsdiagrammet, konvergen sområdet og den dominerende pol eller det dominerende polpar
+
+
+#### 1.
+
+```{r child = "opg9/opga01.Rmd"}
+```
+
+#### 2.
+
+```{r child = "opg9/opga02.Rmd"}
+```
+
+#### 3.
+
+```{r child = "opg9/opga03.Rmd"}
+```
+
+#### 4.
+
+```{r child = "opg9/opga04.Rmd"}
+```
+
+#### 5.
+
+```{r child = "opg9/opga05.Rmd"}
+```
+
+#### 6.
+
+```{r child = "opg9/opga06.Rmd"}
+```
+
+#### 7.
+
+```{r child = "opg9/opga07.Rmd"}
+```
+
+#### 8.
+
+```{r child = "opg9/opga08.Rmd"}
+```
+
+#### 9.
+
+```{r child = "opg9/opga09.Rmd"}
+```
+
+#### 10.
+
+```{r child = "opg9/opga10.Rmd"}
+```
+
+#### 11.
+
+```{r child = "opg9/opga11.Rmd"}
+```
+
+#### 12.
+
+```{r child = "opg9/opga12.Rmd"}
+```
+
+### Opgave B {.tabset .tabset-fade}
+
+> Ved hjælp af følgende pol nulpunktsdiagrammer, opskriv overføringsfunktionen, når DC værdien er 3
+
+#### 1.
+
+```{r child = "opg9/opgb01.Rmd"}
+```
+
+#### 2.
+
+```{r child = "opg9/opgb02.Rmd"}
+```
+
+#### 3.
+
+```{r child = "opg9/opgb03.Rmd"}
+```
+
+#### 4.
+
+```{r child = "opg9/opgb04.Rmd"}
+```
+
+#### 5.
+
+```{r child = "opg9/opgb05.Rmd"}
+```
+
+#### 6.
+
+```{r child = "opg9/opgb06.Rmd"}
+```
+
+### Opgave c
+
+> Angiv stepsvaret for systemerne, der har overføringsfunktionerne fra opgave b. Angiv hvis de er stabile, ustabile eller marginalt stabile, desuden om overføringsfunktionerne er kritisk dæmpede, overdæmpede eller underdæmpede.
+
+
+### Opgave D
+
+> Angiv en funktion af frekvensen for fase og amplituden af funktionerne fra opgave b
+
+### Opgave E
+
+> Angiv sinussvaret for systemerne, der har overføringsfunktionerne fra opgave b. Sinussvaret er svaret hvor systemet påtrykkes $v_{ind}(t) = \sin(t)u(t)$.

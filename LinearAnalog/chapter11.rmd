@@ -71,6 +71,11 @@ Når der snakkes op-amp konfigurationer, refereres der til de her to:
 
 ![](figs/noninverter.png)
 
+## Noter fra lektion 2020-03-10
+
+```{r child = "chp11/20200310.Rmd"}
+```
+
 
 ## Opgave 3
 
