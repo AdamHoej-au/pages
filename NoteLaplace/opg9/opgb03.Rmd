@@ -1,0 +1,26 @@
+Kritisk dæmpet system, da der er dobbeltpol  og poler i $Im = 0$ 
+
+Polen er i :
+$$
+dobbeltP = -2
+$$
+Nulpunktet er i :
+
+$$z_1 = 4$$
+
+Derfor: 
+
+$$
+H(s) = K \frac{s-9}{(s+2)(s+2)} = 3
+$$
+
+
+```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
+expr <- function(s) (s-9)/((s+2)*(s+2))
+x_zero <- c(9)
+y_zero <- c(0)
+x_pole <- c(-2,-2)
+y_pole <- c(0,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,4,expr,4)
+
+```

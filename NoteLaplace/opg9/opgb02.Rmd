@@ -1,0 +1,36 @@
+Polerne er i :
+
+$$
+p_1 = -2 \quad p_2 = -3
+$$
+
+Dermed:
+
+$$
+H(s)= K \frac{1}{(s-p_1)(s-p_2)} = K \frac{1}{(s+2)(s+3)} = 3
+$$
+
+$$
+\left.K \frac{1}{(s+2)(s+3)} = 3 \right|_{s=0}
+$$
+$$
+K \frac{1}{5} = 3
+$$
+$$
+K = 15
+$$
+Derfor: 
+$$
+H(s)= \frac{15}{(s+2)(s+3)}= \frac{15}{s^2+5s+6}
+$$
+
+
+```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
+expr <- function(s) (15)/(s^2+5*s+6)
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-2,-3)
+y_pole <- c(0,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,4,expr,4)
+
+```
