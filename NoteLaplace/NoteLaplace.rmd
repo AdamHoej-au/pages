@@ -31,15 +31,16 @@ stepplot <- function(expr, xmax, n = 1000,
 }
 pole_zero_plot <- function(x_zero_, y_zero_, x_pole_, y_pole_, range,expr, exprrange = 10) {
 
-  ## Zeroes:
+  ## Function + inv laplace:
 expr_ <- function(s) {expr(s)}
 step <- function(s) {(1/s)*expr_(s)}
-pulseLi <- invlap(expr, 0, 12, 2000)
-stepLi <- invlap(step, 0, 12, 2000)
+pulseLi <- invlap(expr, 0, exprrange, 1000)
+stepLi <- invlap(step, 0, exprrange, 1000)
 
-
+  ## Poles:
 x_pole = x_pole_
 y_pole = y_pole_
+  ## Zeroes:
 x_zero = x_zero_
 y_zero = y_zero_
 minMax <- c(-range,range)
@@ -66,11 +67,13 @@ minMax <- c(-range,range)
   arrows(minMax[1], 0, minMax[2], 0, lwd = 1, length = 0.15)
   arrows(0, minMax[1] - 5, 0, minMax[2], lwd = 1, length = 0.15)
   #End of assignment
-  
+
+## Step plot
   plot(stepLi,type="l", col="Red", xlim = c(-1, exprrange), panel.first = grid(),
   xlab = "t [s]", ylab = "f(t)",
   main="Stepresponse")
   abline(v = 0, h = 0,lty=2)
+ ## Puls plot 
   plot(pulseLi,type="l", col="Blue", xlim = c(-1, exprrange), panel.first = grid(),
   xlab = "t [s]", ylab = "f(t)",
   main="Impulseresponse")
@@ -78,7 +81,6 @@ minMax <- c(-range,range)
  }
 
 ```
-
 
 
 # {.tabset .tabset-fade .tabset-pills} 
