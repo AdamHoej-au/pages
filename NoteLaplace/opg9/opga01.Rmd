@@ -2,7 +2,7 @@ $$
 H(s) = \frac{s + 9}{s^2 + 10s + 2} = \frac{(s+9)}{(s+\sqrt{23}+5)(s-\sqrt{23}+5)}
 $$
 
-```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
+```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
 expr <- function(s) (s+9)/(s^2+10*s+2)
 x_zero <- c(-9)
 y_zero <- c(0)

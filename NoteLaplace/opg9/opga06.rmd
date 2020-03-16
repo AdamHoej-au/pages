@@ -4,3 +4,13 @@ H(s)=
 {s+9}
 {s^3+10s^2+28s+24}
 $$
+
+```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
+expr <- function(s) (s+9)/(s^3+10*s^2+28*s+24)
+x_zero <- c(2)
+y_zero <- c(0)
+x_pole <- c(-3,-3,-2)
+y_pole <- c(5,-5,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,5,expr,10)
+
+```

@@ -28,7 +28,7 @@ stepplot <- function(expr, xmax, n = 1000,
   abline(v = 0, h = 0,lty=2)
  
 }
-pole_zero_plot <- function(x_zero_, y_zero_, x_pole_, y_pole_, range,expr) {
+pole_zero_plot <- function(x_zero_, y_zero_, x_pole_, y_pole_, range,expr, exprrange = 10) {
 
   ## Zeroes:
 expr_ <- function(s) {expr(s)}
@@ -65,14 +65,15 @@ minMax <- c(-range,range)
   arrows(minMax[1], 0, minMax[2], 0, lwd = 1, length = 0.15)
   arrows(0, minMax[1] - 5, 0, minMax[2], lwd = 1, length = 0.15)
   #End of assignment
-  plot(pulseLi,type="l", col="Blue", xlim = c(-1, minMax[2]), panel.first = grid(),
-  xlab = "t [s]", ylab = "f(t)")
-# lines(pulseLi,col="Blue")
-  ## Function plot ?
-lines(stepLi,col="red")
+  
+  plot(stepLi,type="l", col="Red", xlim = c(-1, exprrange), panel.first = grid(),
+  xlab = "t [s]", ylab = "f(t)",
+  main="Stepresponse")
   abline(v = 0, h = 0,lty=2)
-  mtext("Red: Steprespons, Blue: Pulserespons", side=3, line=2, at=0)
-
+  plot(pulseLi,type="l", col="Blue", xlim = c(-1, exprrange), panel.first = grid(),
+  xlab = "t [s]", ylab = "f(t)",
+  main="Impulseresponse")
+  abline(v = 0, h = 0,lty=2)
  }
 
 ```
@@ -85,7 +86,7 @@ lines(stepLi,col="red")
 
 > Find overføringsfunktionenen ud fra de to poler. DC forstærkning = 5.
 
-```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
+```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
 expr <- function(s) 65 * (1)/(s^2+4*s+13)
 x_zero <- c()
 y_zero <- c()
@@ -97,7 +98,7 @@ pole_zero_plot(x_zero, y_zero, x_pole, y_pole,10,expr)
 
 > Find poler, step svar og dominerende
 
-```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
+```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
 expr <- function(s) (1)/(s*(s+2)*(s+4))
 x_zero <- c()
 y_zero <- c()
@@ -108,7 +109,7 @@ pole_zero_plot(x_zero, y_zero, x_pole, y_pole,5,expr)
 
 > Frekvenser
 
-```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
+```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
 expr <- function(s) (1)/(s)
 x_zero <- c()
 y_zero <- c()
@@ -119,7 +120,7 @@ pole_zero_plot(x_zero, y_zero, x_pole, y_pole,5,expr)
 
 > Opgave 2
 
-```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
+```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
 expr <- function(s) (1)/((s+2)*(s^2+2*s+2)*(s^2+14*s+58))
 x_zero <- c()
 y_zero <- c()
@@ -130,7 +131,7 @@ pole_zero_plot(x_zero, y_zero, x_pole, y_pole,8,expr)
 
 > Stabilt...
 
-```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
+```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
 expr <- function(s) (3)/((s+1)^2+3^2)
 x_zero <- c()
 y_zero <- c()
@@ -141,7 +142,7 @@ pole_zero_plot(x_zero, y_zero, x_pole, y_pole,8,expr)
 
 > Ustabilt...
 
-```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
+```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
 expr <- function(s) (3)/((s-1)^2+3^2)
 x_zero <- c()
 y_zero <- c()
@@ -153,7 +154,7 @@ pole_zero_plot(x_zero, y_zero, x_pole, y_pole,4,expr)
 
 > Opgave3
 
-```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
+```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
 expr <- function(s) 1
 x_zero <- c()
 y_zero <- c()
