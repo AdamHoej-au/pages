@@ -58,9 +58,6 @@ minMax <- c(-range,range)
   rect(max(x_pole), minMax[1]-5, minMax[2]+5, minMax[2]+5, density = 8, angle = 45, col = rgb(0, 0, 0, alpha = 0.2))
   rect(max(x_pole), minMax[1]-5, minMax[2]+5, minMax[2]+5, density = 8, angle = -45, col = rgb(0, 0, 0, alpha = 0.2))
   
-  ## Function plot ?
-lines(pulseLi,col="Blue")
-lines(stepLi,col="red")
   # mtext(paste("Konvergens: ", round(max(x_pole),digits=4)), side=1, line=3.5, at=9)
 
   text(x_pole, y_pole, labels = seq(1, length(y_pole)), pos = 1) # Pole text
@@ -68,6 +65,12 @@ lines(stepLi,col="red")
   arrows(minMax[1], 0, minMax[2], 0, lwd = 1, length = 0.15)
   arrows(0, minMax[1] - 5, 0, minMax[2], lwd = 1, length = 0.15)
   #End of assignment
+  plot(pulseLi,type="l", col="Blue", xlim = c(-1, minMax[2]), panel.first = grid(),
+  xlab = "t [s]", ylab = "f(t)")
+# lines(pulseLi,col="Blue")
+  ## Function plot ?
+lines(stepLi,col="red")
+  abline(v = 0, h = 0,lty=2)
   mtext("Red: Steprespons, Blue: Pulserespons", side=3, line=2, at=0)
 
  }
@@ -82,7 +85,7 @@ lines(stepLi,col="red")
 
 > Find overføringsfunktionenen ud fra de to poler. DC forstærkning = 5.
 
-```{r, echo = FALSE}
+```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
 expr <- function(s) 65 * (1)/(s^2+4*s+13)
 x_zero <- c()
 y_zero <- c()
@@ -94,7 +97,7 @@ pole_zero_plot(x_zero, y_zero, x_pole, y_pole,10,expr)
 
 > Find poler, step svar og dominerende
 
-```{r, echo = FALSE}
+```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
 expr <- function(s) (1)/(s*(s+2)*(s+4))
 x_zero <- c()
 y_zero <- c()
@@ -105,7 +108,7 @@ pole_zero_plot(x_zero, y_zero, x_pole, y_pole,5,expr)
 
 > Frekvenser
 
-```{r, echo = FALSE}
+```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
 expr <- function(s) (1)/(s)
 x_zero <- c()
 y_zero <- c()
@@ -116,13 +119,47 @@ pole_zero_plot(x_zero, y_zero, x_pole, y_pole,5,expr)
 
 > Opgave 2
 
-```{r, echo = FALSE}
+```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
 expr <- function(s) (1)/((s+2)*(s^2+2*s+2)*(s^2+14*s+58))
 x_zero <- c()
 y_zero <- c()
 x_pole <- c(-2,-1,-1,-3,-3)
 y_pole <- c(0,1,-1,7,-7)
 pole_zero_plot(x_zero, y_zero, x_pole, y_pole,8,expr)
+```
+
+> Stabilt...
+
+```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
+expr <- function(s) (3)/((s+1)^2+3^2)
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-1,-1)
+y_pole <- c(3,-3)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,8,expr)
+```
+
+> Ustabilt...
+
+```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
+expr <- function(s) (3)/((s-1)^2+3^2)
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(1,1)
+y_pole <- c(3,-3)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,4,expr)
+```
+
+
+> Opgave3
+
+```{r, echo = FALSE,out.width=c('50%', '50%'), fig.show='hold'}
+expr <- function(s) 1
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-1,-4,-8,9,-2,-2)
+y_pole <- c(0,0,0,0,1,-1)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,10,expr)
 ```
 
 

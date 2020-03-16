@@ -1,0 +1,20 @@
+### Stabilitet
+
+Systemet er *ustabilt* når:
+- Der er poler i højre halvplan af pol-nulpunktsaksen ($Re>0$)
+- Dobbelte poler på imaginær aksen ($Im(p_m) = Im(p_n$)
+
+### Poler og polpar
+
+Deles op i to grupper:
+
+- Dem hvor $Im=0$.
+- Dem hvor $Im\neq 0$.
+
+
+Med med $Im=0$:
+
+Hver pol kan skrives som:
+$$
+\frac{K}{s-p_1} + 
+$$
