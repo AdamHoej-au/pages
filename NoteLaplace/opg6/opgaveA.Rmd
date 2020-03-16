@@ -1,0 +1,418 @@
+
+### A.1
+
+
+
+```{r, echo = FALSE}
+
+x_zero <- c(-1)
+y_zero <- c(0)
+x_pole <- c(-2,-2)
+y_pole <- c(2,-2)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 5,(-7*exp(-2*t)*cos(2*t)+21*exp(-2*t)*sin(2*t)+7),
+6),5)
+
+```
+
+Vi har:
+
+$$ 
+V_{in} = \text{DC} \quad Gain = 7 \quad z_1 = -1 \quad p_1 = -2 + 2 j \quad p_2 = -2 - 2j
+$$
+
+Derfor:
+$$ H(s) =  K \cdot \frac{s+1}{(s+2+2j)(s+2-2j)} $$
+
+Omskriv til frekvensdomæne:
+$$ s = \omega j \qquad  \omega = 0 \; \text{for DC}$$
+
+Hvorfor:
+$$H(0) = K \cdot \frac{0+1}{(0+2+2j)(0+2-2j)} = 7 $$
+$$H(0) = \frac{K}{(2+2j)(2-2j)} = 7 $$
+$$H(0) = \frac{K}{4-4j+4j+4} = 7 $$
+$$H(0) = \frac{K}{8} = 7 $$
+$$K = 7 \cdot 8 $$
+$$K = 56 $$
+
+Dermed:
+
+$$\boxed{ H(s) = \frac{56(s+1)}{(s+2+2j)(s+2-2j)} }$$
+ 
+Bodeplot der viser $|H(s)|$ og $\mathrm{arg}(H(s))$: 
+
+```{r, echo = FALSE}
+
+library("freqr")
+bodeplot(fr = c(-3,6),
+        n = c(56, 56),
+        d = c(0, 1, 4, 8),
+#        highlight = 0.5,
+        label = "Highlight",
+        )
+```
+
+Stepsvar:
+
+$$
+\frac{1}{s}\cdot H(s)
+$$
+
+
+Step plot:
+
+
+### A.2
+
+```{r, echo = FALSE}
+
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-2,-3)
+y_pole <- c(0,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 4)
+
+```
+
+Vi har:
+
+$$
+ V_{in} = \text{DC} \quad Gain = 3 \quad p_1 = -3 \quad p_2 = -2
+$$
+
+Derfor:
+
+$$
+H(s) = K \cdot \frac{1}{(s+3)(s+2)}
+$$
+
+Omskriv til frekvensdomæne:
+$$ s = \omega j \qquad  \omega = 0 \; \text{for DC}$$
+
+Hvorfor:
+$$ K \frac{1}{(0+3)(0+2)} = 3 $$
+$$\frac{K}{6} = 3 $$
+$$K = 18 $$
+
+Dermed:
+
+$$
+\boxed{ H(s) = \frac{18}{(s+3)(s+2)}}
+$$
+
+```{r, echo = FALSE }
+library("freqr")
+bodeplot(fr = c(-3,6),
+        n = c(0, 18),
+        d = c(0, 1, 5, 6),
+#        highlight = 0.5,
+        label = "Highlight",
+        )
+```
+
+Step plot:
+
+$$
+ (-9\cdot e^{-2\cdot t }+6\cdot e^{-3\cdot t}+3)
+$$
+
+```{r, echo = FALSE}
+
+stepplot(
+  (-9*exp(-2*t)+6*exp(-3*t)+3),
+6)
+
+```
+
+### A.3
+
+```{r, echo=FALSE}
+
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-5,-5,-1,-1,-1)
+y_pole <- c(1,-1,1,-1,-0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6)
+```
+
+Vi har :
+
+$$
+ V_{in} = \text{DC} \quad Gain = -3
+$$
+
+$$  p_1 = -5+j \quad p_2 = -5-j \quad p_3 = -1+j \quad p_4 = -1-j  \quad p_5 = -1  $$
+
+Dermed:
+
+$$
+ H(s) = \frac{K}{(s+5+j)(s+5-j)(s+1+j)(s+1-j)(s+1)}
+$$
+
+Omskriv til frekvensdomæne:
+$$ s = \omega j \qquad  \omega = 0 \; \text{for DC}$$
+
+$$ H(0) = \frac{K}{(0+5+j)(0+5-j)(0+1+j)(0+1-j)(0+1)} = -3$$
+$$ H(0) = \frac{K}{(5+j)(5-j)(1+j)(1-j) \cdot 1} = -3 $$
+$$ H(0) = \frac{K}{52}  = -3 $$
+$$ K = -3 \cdot 52 $$
+$$ K = -156 $$
+
+Derfor:
+
+$$
+\boxed{
+ H(s) = \frac{-156}{(s+5+j)(s+5-j)(s+1+j)(s+1-j)(s+1)}
+}
+$$
+
+$$
+\boxed{
+ H(s) = \frac{-156}{s^5+13s^4+60s^3+120s^2+124s+52}
+}
+$$
+
+```{r,echo=FALSE}
+bodeplot(fr = c(-3,6),
+        n = c(0, -156),
+        d = c(0, 1, 13, 60, 120, 124, 52),
+#        highlight = 0.5,
+        label = "Highlight",
+        )
+
+```
+
+```{r, echo = FALSE}
+
+stepplot(
+sin(t)*(((39*exp(-t))/(20))-((87*exp(-5*t))/(340)))+cos(t)*(((-117*exp(-t))/(20))-((111*exp(-5*t))/(340)))+((156*exp(-t))/(17))-3,
+8)
+
+```
+
+### A.4
+
+```{r, echo = FALSE}
+
+x_zero <- c(-1,2)
+y_zero <- c(0,0)
+x_pole <- c(-5,-2)
+y_pole <- c(0,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6)
+```
+
+Vi har :
+
+$$
+ V_{in} = \text{DC} \quad Gain = 2
+$$
+
+$$
+z_1 = -1 \quad z_2 = 2 \quad p_1 = -5 \quad p_2 = -2
+$$
+
+Derfor:
+
+$$
+H(s) = K \frac{(s+1)(s-2)}{(s+5)(s+2)}
+$$
+
+Omskriv til frekvensdomæne:
+$$ s = \omega j \qquad  \omega = 0 \; \text{for DC}$$
+
+$$
+H(s) = K \frac{(0+1)(0-2)}{(0+5)(0+2)} = 2
+$$
+
+$$
+\frac{K}{10} = -1
+$$
+
+$$
+K = -10
+$$
+
+Derfor:
+
+$$
+H(s) = -10 \frac{(s+1)(s-2)}{(s+5)(s+2)}
+$$
+
+```{r, echo = FALSE }
+library("freqr")
+bodeplot(fr = c(-3,6),
+        n = c(-10,10,20),
+        d = c(1,7,10),
+#        highlight = 0.5,
+        label = "Highlight",
+        )
+
+```
+
+```{r, echo = FALSE}
+stepplot(
+((20*exp(-2*t))/(3))-((56*exp(-5*t))/(3))+2,
+6)
+```
+
+### A.5
+
+```{r, echo = FALSE}
+
+x_zero <- c(-1)
+y_zero <- c(0)
+x_pole <- c(-5,-5)
+y_pole <- c(1,-1)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6)
+```
+
+Vi har :
+
+$$
+ V_{in} = \text{DC} \quad Gain = 1
+$$
+
+$$
+z_1 = -1 \quad z_2 = 2 \quad p_1 = -5+j \quad p_2 = -5-j
+$$
+
+Derfor:
+
+$$
+H(s) = K \frac{(s+1)}{(s+5-j)(s+5+j)}
+$$
+
+Omskriv til frekvensdomæne:
+$$ s = \omega j \qquad  \omega = 0 \; \text{for DC}$$
+
+$$
+H(s) = K \frac{(1)}{(5-j)(5+j)} = 1
+$$
+
+$$
+K = 26
+$$
+
+Derfor:
+
+$$
+H(s) = 26 \frac{(s+1)}{(s+5-j)(s+5+j)}
+$$
+
+```{r, echo = FALSE }
+library("freqr")
+
+bodeplot(fr = c(-3,6),
+        n = c(0,26),
+        d = c(1,10,26),
+#        highlight = 0.5,
+        label = "Highlight",
+        )
+```
+
+Step plot:
+
+```{r, echo = FALSE}
+stepplot(
+(-cos(t)-5*sin(t))*exp(-5*t)+1,
+6)
+```
+
+### A.6
+
+```{r, echo = FALSE}
+
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-2,-1,0)
+y_pole <- rep(0,3)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6)
+
+```
+
+Vi har :
+
+$$
+H(0) = 7
+$$
+
+$$
+p_1 = -2 \quad p_2 = -1 \quad p_3 = 0
+$$
+
+Derfor:
+
+$$
+$$
+
+Givet:
+$$ \lim_{s \to 0} H(s) = 7$$
+$$ \lim_{s \to 0} K \frac{1}{s^3+3s^2+2s} = 7$$
+$$ K = 14$$
+Derfor:
+$$ H(s) = \frac{14}{(s+2)(s+1)\cdot s} $$
+
+```{r, echo = FALSE }
+library("freqr")
+bodeplot(fr = c(-3,6),
+        n = c(0,14),
+        d = c(1,3,2),
+#        highlight = 0.5,
+        label = "Highlight",
+        )
+```
+
+Step plot:
+$$ -14\cdot e^{-t}+7\cdot e^{-2\cdot t}+7 $$
+
+```{r, echo = FALSE}
+stepplot(
+-14*exp(-t)+7*exp(-2*t)+7,
+6)
+```
+
+### A.7
+
+```{r, echo = FALSE}
+
+x_zero <- c(-5,2)
+y_zero <- c(0,0)
+x_pole <- c(0,-2,-2)
+y_pole <- c(0,2,-2)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6)
+```
+
+Vi har :
+
+$$
+H(0) = 2
+$$
+
+$$
+z_0 = -5 \quad z_1 = 2 \quad p_1 = 0 \quad p_2 = -2+2j \quad p_3 = -2-2j
+$$
+
+Derfor:
+
+$$
+H(s) = K \cdot \frac{(s+5)(s-2)}{s(s+2-2j)(s+2+2j)}
+$$
+
+Med slutværdien indsat:
+
+$$
+\lim_{s \to 0} s H(s) = 2
+$$
+
+$$
+\lim_{s \to 0} s  K \cdot \frac{(s+5)(s-2)}{s(s+2-2j)(s+2+2j)} = 2
+$$
+
+Dette giver:
+
+$$ K = \frac{-8}{5} $$
+
+Hvorfor:
+
+$$
+H(s) = \frac{-8}{5} \cdot \frac{(s+5)(s-2)}{s(s+2-2j)(s+2+2j)}
+$$

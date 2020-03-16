@@ -163,6 +163,22 @@ x_pole <- c(-1,-4,-8,9,-2,-2)
 y_pole <- c(0,0,0,0,1,-1)
 pole_zero_plot(x_zero, y_zero, x_pole, y_pole,10,expr)
 ```
+## Opgave 6 {.tabset .tabset-fade}
+
+### Opgave A
+
+```{r child = 'opg6/opgaveA.Rmd'}
+```
+
+### Opgave B
+
+```{r child = 'opg6/opgaveB.Rmd'}
+```
+
+### Opgave C
+
+```{r child = 'opg6/opgaveC.Rmd'}
+```
 
 
 ## Opgave 9 {.tabset .tabset-fade}
