@@ -4,3 +4,13 @@ H(s)=
 {s-2}
 {s^3+8s^2+46s+68}
 $$
+
+```{r, echo = FALSE}
+expr <- function(s) (s-2)/(s^3+8*s^2+46*s+68)
+x_zero <- c(2)
+y_zero <- c(0)
+x_pole <- c(-3,-3,-2)
+y_pole <- c(5,-5,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,5,expr)
+
+```

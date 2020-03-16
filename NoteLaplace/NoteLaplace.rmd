@@ -28,17 +28,20 @@ stepplot <- function(expr, xmax, n = 1000,
   abline(v = 0, h = 0,lty=2)
  
 }
-pole_zero_plot <- function(x_zero_, y_zero_, x_pole_, y_pole_, range) {
+pole_zero_plot <- function(x_zero_, y_zero_, x_pole_, y_pole_, range,expr) {
 
   ## Zeroes:
-  
+expr_ <- function(s) {expr(s)}
+step <- function(s) {(1/s)*expr_(s)}
+pulseLi <- invlap(expr, 0, 12, 2000)
+stepLi <- invlap(step, 0, 12, 2000)
+
 
 x_pole = x_pole_
 y_pole = y_pole_
 x_zero = x_zero_
 y_zero = y_zero_
 minMax <- c(-range,range)
-
   # RUN ME!
   par(lab = c(10, 10, 5),pty="s")
   plot(
@@ -55,26 +58,72 @@ minMax <- c(-range,range)
   rect(max(x_pole), minMax[1]-5, minMax[2]+5, minMax[2]+5, density = 8, angle = 45, col = rgb(0, 0, 0, alpha = 0.2))
   rect(max(x_pole), minMax[1]-5, minMax[2]+5, minMax[2]+5, density = 8, angle = -45, col = rgb(0, 0, 0, alpha = 0.2))
   
-  mtext(paste("Konvergens: ", round(max(x_pole),digits=4)), side=1, line=3.5, at=9)
+  ## Function plot ?
+lines(pulseLi,col="Blue")
+lines(stepLi,col="red")
+  # mtext(paste("Konvergens: ", round(max(x_pole),digits=4)), side=1, line=3.5, at=9)
 
   text(x_pole, y_pole, labels = seq(1, length(y_pole)), pos = 1) # Pole text
   ## Aksepile.
   arrows(minMax[1], 0, minMax[2], 0, lwd = 1, length = 0.15)
   arrows(0, minMax[1] - 5, 0, minMax[2], lwd = 1, length = 0.15)
   #End of assignment
-}
+  mtext("Red: Steprespons, Blue: Pulserespons", side=3, line=2, at=0)
+
+ }
+
 ```
 
 
 
-
-
-
-
-
-
-
 # {.tabset .tabset-fade .tabset-pills} 
+
+## Opgave fra forelæsninger
+
+> Find overføringsfunktionenen ud fra de to poler. DC forstærkning = 5.
+
+```{r, echo = FALSE}
+expr <- function(s) 65 * (1)/(s^2+4*s+13)
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-2,-2)
+y_pole <- c(3,-3)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,10,expr)
+```
+
+
+> Find poler, step svar og dominerende
+
+```{r, echo = FALSE}
+expr <- function(s) (1)/(s*(s+2)*(s+4))
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(0,-2,-4)
+y_pole <- c(0,0,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,5,expr)
+```
+
+> Frekvenser
+
+```{r, echo = FALSE}
+expr <- function(s) (1)/()
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(0,0,-1,-1,-2,-2)
+y_pole <- c(4,-4,3,-3,1,-1)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,5,expr)
+```
+
+> Opgave 2
+
+```{r, echo = FALSE}
+expr <- function(s) (1)/((s+2)*(s^2+2*s+2)*(s^2+14*s+58))
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-2,-1,-1,-3,-3)
+y_pole <- c(0,1,-1,7,-7)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,8,expr)
+```
 
 
 ## Opgave 9 {.tabset .tabset-fade}

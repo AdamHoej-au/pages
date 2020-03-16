@@ -4,3 +4,13 @@ H(s)=
 {s+9}
 {s^2+s+10}
 $$
+
+
+```{r, echo = FALSE}
+expr <- function(s) (s+9)/(s^2+s+10)
+x_zero <- c(-9)
+y_zero <- c(0)
+x_pole <- rep(-0.5,2)
+y_pole <- c(sqrt(39)/2,-sqrt(39)/2)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole,12,expr)
+```
