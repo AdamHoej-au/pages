@@ -106,7 +106,7 @@ pole_zero_plot(x_zero, y_zero, x_pole, y_pole,5,expr)
 > Frekvenser
 
 ```{r, echo = FALSE}
-expr <- function(s) (1)/()
+expr <- function(s) (1)/(s)
 x_zero <- c()
 y_zero <- c()
 x_pole <- c(0,0,-1,-1,-2,-2)
