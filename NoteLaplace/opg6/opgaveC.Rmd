@@ -15,11 +15,12 @@ $$\mathcal{L}^{-1} \{f(t)\} \quad F(s) =  \frac{2}{2s+1} $$
 Som har polen: $p_1 = -\frac{1}{2}$
 
 ```{r, echo = FALSE}
+expr <- function(s) 2/(2*s+1)
 x_zero <- c()
 y_zero <- c()
 x_pole <- c(-0.5)
 y_pole <- c(-0)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 5)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 5,expr)
 bodeplot(fr = c(-3,3),
         n = c(0,2),
         d = c(2,1))
@@ -42,11 +43,12 @@ $$\mathcal{L}^{-1} \{f(t)\} \quad F(s) =  \frac{1}{s^2+1^2} $$
 Som har polerne: $p = \pm j$
 
 ```{r, echo = FALSE}
+expr <- function(s) 1/(s^2+1)
 x_zero <- c()
 y_zero <- c()
 x_pole <- c(-0,0)
 y_pole <- c(1,-1)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 5)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 5,expr)
 bodeplot(fr = c(-3,3),
         n = c(0,1),
         d = c(1,1))
@@ -72,11 +74,12 @@ Dette giver polerne:
 $$ P = -\frac{1}{2} \pm j $$
 
 ```{r, echo = FALSE}
+expr <- function(s) 4/(4*s^2+4*s+5)
 x_zero <- c()
 y_zero <- c()
 x_pole <- c(-0.5,-0.5)
 y_pole <- c(1,-1)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 2)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 2,expr)
 bodeplot(fr = c(-1,1),
         n = c(0,4),
         d = c(4,4,5))
@@ -89,7 +92,7 @@ Graf givet:
 ```{r,  echo = FALSE}
 
 stepplot(
-  (-exp(-4*t)+1),
+  (-exp(-3*t)+1),
 2)
 ```
 
@@ -97,69 +100,39 @@ Funktion der er plottet er : $$f(t) =e^{-0.5t} \sin(t) u(t) $$
 
 Det giver den invLP:
 $$\mathcal{L}^{-1} \{f(t)\} \quad F(s) =  \frac{4}{4s^2+4s+5}$$
-$$ 4\frac{1}{4s^2+4s+5}$$
+$$ 3\frac{1}{s(s+3)}$$
 Dette giver polerne:
-$$ P = -\frac{1}{2} \pm j $$
+$$ p_1 = -3 \quad p_2 = 0 $$
 
 ```{r, echo = FALSE}
+expr <- function(s) 3/(s*(s+3))
 x_zero <- c()
 y_zero <- c()
-x_pole <- c(-0.5,-0.5)
-y_pole <- c(1,-1)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 2)
+x_pole <- c(-3,0)
+y_pole <- c(0,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 2,expr)
 bodeplot(fr = c(-1,1),
-        n = c(0,4),
-        d = c(4,4,5))
+        n = c(0,3),
+        d = c(1,3,0))
 ```
 
 ### C.5
 
 Funktion der er plottet er : $$f(t) =e^{-0.25t} \cdot (-\cos(t)) u(t) $$
-
+<!-- 
 Det giver den invLP:
 $$ \frac{4}{4s^2+4s+5}$$
 $$ 4\frac{1}{4s^2+4s+5}$$
 Dette giver polerne:
-$$ P = -\frac{1}{2} \pm j $$
+$$ P = -\frac{1}{2} \pm j $$ -->
 
 ```{r, echo = FALSE,out.height=c('33%', '33%', '33%'), fig.show='hold'}
-
-stepplot(
-  (exp(-0.25*t)*(-cos(t)) +1),
-10)
-
+expr <- function(s) 64/((4*s+1)*(16*s^2+8*s+17))
 x_zero <- c()
 y_zero <- c()
-x_pole <- c(-0.5,-0.5)
-y_pole <- c(1,-1)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 2)
-bodeplot(fr = c(-1,1),
-        n = c(0,4),
-        d = c(4,4,5))
-```
-
-
-### C.6
-
-Funktion der er plottet ½f(t) = e^{-0.25t} \cdot (-\cos(t)) u(t) $$
-
-Derfor:
-$$\mathcal{L}^{-1} \{f(t)\} \quad F(s) = \frac{4}{4s^2+4s+5}$$
-$$ F(s) =  4\frac{1}{4s^2+4s+5}$$
-Dette giver polerne:
-$$ P = -\frac{1}{2} \pm j $$
-
-```{r, echo = FALSE,out.height=c('33%', '33%', '33%'), fig.show='hold'}
-
-stepplot(
-  (exp(-0.25*t)*(-cos(t)) +1),
-10)
-
-x_zero <- c()
-y_zero <- c()
-x_pole <- c(-0.5,-0.5)
-y_pole <- c(1,-1)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 2)
+x_pole <- c(-1/4,-1/4,-1/4)
+y_pole <- c(1,-1,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 2,expr,10)
 bodeplot(fr = c(-1,1),
         n = c(0,4),
         d = c(4,4,5))

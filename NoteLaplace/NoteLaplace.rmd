@@ -95,6 +95,11 @@ minMax <- c(-range,range)
 ```{r child = 'opg6/opgaveA.Rmd'}
 ```
 
+### Opgave C {.tabset .tabset-fade}
+
+```{r child = 'opg6/opgaveC.Rmd'}
+```
+
 
 ## Opgave 9 {.tabset .tabset-fade}
 
