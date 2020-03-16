@@ -6,7 +6,7 @@ H(s)=
 $$
 
 
-```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
+```{r, echo = FALSE}
 expr <- function(s) (s)/(s^3-2*s^2-20*s-24)
 x_zero <- c(0)
 y_zero <- c(0)

@@ -85,99 +85,14 @@ minMax <- c(-range,range)
 
 ## Opgave fra forelæsninger
 
-> Find overføringsfunktionenen ud fra de to poler. DC forstærkning = 5.
-
-```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
-expr <- function(s) 65 * (1)/(s^2+4*s+13)
-x_zero <- c()
-y_zero <- c()
-x_pole <- c(-2,-2)
-y_pole <- c(3,-3)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole,10,expr)
+```{r child = 'lecture20200316.Rmd'}
 ```
 
-
-> Find poler, step svar og dominerende
-
-```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
-expr <- function(s) (1)/(s*(s+2)*(s+4))
-x_zero <- c()
-y_zero <- c()
-x_pole <- c(0,-2,-4)
-y_pole <- c(0,0,0)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole,5,expr)
-```
-
-> Frekvenser
-
-```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
-expr <- function(s) (1)/(s)
-x_zero <- c()
-y_zero <- c()
-x_pole <- c(0,0,-1,-1,-2,-2)
-y_pole <- c(4,-4,3,-3,1,-1)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole,5,expr)
-```
-
-> Opgave 2
-
-```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
-expr <- function(s) (1)/((s+2)*(s^2+2*s+2)*(s^2+14*s+58))
-x_zero <- c()
-y_zero <- c()
-x_pole <- c(-2,-1,-1,-3,-3)
-y_pole <- c(0,1,-1,7,-7)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole,8,expr)
-```
-
-> Stabilt...
-
-```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
-expr <- function(s) (3)/((s+1)^2+3^2)
-x_zero <- c()
-y_zero <- c()
-x_pole <- c(-1,-1)
-y_pole <- c(3,-3)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole,8,expr)
-```
-
-> Ustabilt...
-
-```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
-expr <- function(s) (3)/((s-1)^2+3^2)
-x_zero <- c()
-y_zero <- c()
-x_pole <- c(1,1)
-y_pole <- c(3,-3)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole,4,expr)
-```
-
-
-> Opgave3
-
-```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
-expr <- function(s) 1
-x_zero <- c()
-y_zero <- c()
-x_pole <- c(-1,-4,-8,9,-2,-2)
-y_pole <- c(0,0,0,0,1,-1)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole,10,expr)
-```
 ## Opgave 6 {.tabset .tabset-fade}
 
-### Opgave A
+### Opgave A {.tabset .tabset-fade}
 
 ```{r child = 'opg6/opgaveA.Rmd'}
-```
-
-### Opgave B
-
-```{r child = 'opg6/opgaveB.Rmd'}
-```
-
-### Opgave C
-
-```{r child = 'opg6/opgaveC.Rmd'}
 ```
 
 

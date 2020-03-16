@@ -1,16 +1,12 @@
 
-### A.1
-
-
-
+#### A.1
 ```{r, echo = FALSE}
-
+expr <- function(s) (56*s+56)/(s^2+4*s+8)
 x_zero <- c(-1)
 y_zero <- c(0)
 x_pole <- c(-2,-2)
 y_pole <- c(2,-2)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 5,(-7*exp(-2*t)*cos(2*t)+21*exp(-2*t)*sin(2*t)+7),
-6),5)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 5,expr)
 
 ```
 
@@ -51,28 +47,17 @@ bodeplot(fr = c(-3,6),
         )
 ```
 
-Stepsvar:
-
-$$
-\frac{1}{s}\cdot H(s)
-$$
-
-
-Step plot:
-
-
-### A.2
+#### A.2
 
 ```{r, echo = FALSE}
-
+expr <- function(s) (18)/((s+3)*(s+2))
 x_zero <- c()
 y_zero <- c()
 x_pole <- c(-2,-3)
 y_pole <- c(0,0)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 4)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 4,expr)
 
 ```
-
 Vi har:
 
 $$
@@ -109,29 +94,16 @@ bodeplot(fr = c(-3,6),
         )
 ```
 
-Step plot:
 
-$$
- (-9\cdot e^{-2\cdot t }+6\cdot e^{-3\cdot t}+3)
-$$
+#### A.3
 
 ```{r, echo = FALSE}
-
-stepplot(
-  (-9*exp(-2*t)+6*exp(-3*t)+3),
-6)
-
-```
-
-### A.3
-
-```{r, echo=FALSE}
-
+expr <- function(s) (-156)/(s^5+13*s^4+60*s^3+120*s^2+124*s+52)
 x_zero <- c()
 y_zero <- c()
 x_pole <- c(-5,-5,-1,-1,-1)
 y_pole <- c(1,-1,1,-1,-0)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6,expr)
 ```
 
 Vi har :
@@ -181,23 +153,16 @@ bodeplot(fr = c(-3,6),
 
 ```
 
-```{r, echo = FALSE}
 
-stepplot(
-sin(t)*(((39*exp(-t))/(20))-((87*exp(-5*t))/(340)))+cos(t)*(((-117*exp(-t))/(20))-((111*exp(-5*t))/(340)))+((156*exp(-t))/(17))-3,
-8)
-
-```
-
-### A.4
+#### A.4
 
 ```{r, echo = FALSE}
-
+expr <- function(s) (-10*s^2+10*s+20)/(s^2+7*s+10)
 x_zero <- c(-1,2)
 y_zero <- c(0,0)
 x_pole <- c(-5,-2)
 y_pole <- c(0,0)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6,expr)
 ```
 
 Vi har :
@@ -248,21 +213,15 @@ bodeplot(fr = c(-3,6),
 
 ```
 
-```{r, echo = FALSE}
-stepplot(
-((20*exp(-2*t))/(3))-((56*exp(-5*t))/(3))+2,
-6)
-```
-
-### A.5
-
+#### A.5
 ```{r, echo = FALSE}
 
+expr <- function(s) 26/(s^2+10*s+26)
 x_zero <- c(-1)
 y_zero <- c(0)
 x_pole <- c(-5,-5)
 y_pole <- c(1,-1)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6,expr)
 ```
 
 Vi har :
@@ -309,24 +268,16 @@ bodeplot(fr = c(-3,6),
         )
 ```
 
-Step plot:
+
+#### A.6
 
 ```{r, echo = FALSE}
-stepplot(
-(-cos(t)-5*sin(t))*exp(-5*t)+1,
-6)
-```
-
-### A.6
-
-```{r, echo = FALSE}
-
+expr <- function(s) 14/(s^2+3*s+2)
 x_zero <- c()
 y_zero <- c()
 x_pole <- c(-2,-1,0)
 y_pole <- rep(0,3)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6)
-
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6,expr)
 ```
 
 Vi har :
@@ -361,24 +312,17 @@ bodeplot(fr = c(-3,6),
         )
 ```
 
-Step plot:
-$$ -14\cdot e^{-t}+7\cdot e^{-2\cdot t}+7 $$
 
-```{r, echo = FALSE}
-stepplot(
--14*exp(-t)+7*exp(-2*t)+7,
-6)
-```
-
-### A.7
+#### A.7
 
 ```{r, echo = FALSE}
 
+expr <- function(s) -(8/5)*((s^2+3*s-10)/(s^3+4*s^2+8*s))
 x_zero <- c(-5,2)
 y_zero <- c(0,0)
 x_pole <- c(0,-2,-2)
 y_pole <- c(0,2,-2)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 6,expr)
 ```
 
 Vi har :

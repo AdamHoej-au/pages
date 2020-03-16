@@ -25,7 +25,7 @@ H(s)= \frac{15}{(s+2)(s+3)}= \frac{15}{s^2+5s+6}
 $$
 
 
-```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
+```{r, echo = FALSE}
 expr <- function(s) (15)/(s^2+5*s+6)
 x_zero <- c()
 y_zero <- c()

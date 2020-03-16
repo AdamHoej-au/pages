@@ -15,7 +15,7 @@ H(s) = K \frac{s-9}{(s+2)(s+2)} = 3
 $$
 
 
-```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
+```{r, echo = FALSE}
 expr <- function(s) (s-9)/((s+2)*(s+2))
 x_zero <- c(9)
 y_zero <- c(0)

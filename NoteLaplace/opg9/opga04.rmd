@@ -5,7 +5,7 @@ H(s)=
 {s^3+8s^2+46s+68}
 $$
 
-```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
+```{r, echo = FALSE}
 expr <- function(s) (s-2)/(s^3+8*s^2+46*s+68)
 x_zero <- c(2)
 y_zero <- c(0)

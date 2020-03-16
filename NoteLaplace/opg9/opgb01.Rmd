@@ -25,7 +25,7 @@ H(s)= \frac{30}{(s+3-1j)(s+3+1j)} = \frac{30}{s^2+6s+10}
 $$
 
 
-```{r, echo = FALSE,out.width=c('33%', '33%','33%'), fig.show='hold'}
+```{r, echo = FALSE}
 expr <- function(s) (30)/(s^2+6*s+10)
 x_zero <- c()
 y_zero <- c()
