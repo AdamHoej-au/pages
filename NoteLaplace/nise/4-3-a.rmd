@@ -1,0 +1,40 @@
+```{r, echo = FALSE}
+expr <- function(s) (400)/(s^2+12*s+400)
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-6,-6)
+y_pole <- c(-2*sqrt(91),2*sqrt(91))
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 20,expr,1.25)
+
+```
+Vi har:
+
+$$
+G(s) = 400 \cdot \frac{1}{s^2+12s+400}
+$$
+
+$$
+C(s) = \frac{1}{s} \cdot 400 \cdot \frac{1}{s^2+12s+400} = 400 \cdot \frac{1}{s(s^2+12s+400)}
+$$
+
+Her er polparret: 
+
+$$
+p =-6 \pm 2\sqrt{91} = -6\pm 19.08
+$$
+
+Det giver følgende underdæmpede step respons
+
+$$
+c(t) = A + B e^{-\sigma t} + cos(\omega t - \phi) 
+$$
+Hvor 
+$$
+\sigma = 6 \quad \omega = 19.08
+$$
+
+Altså:
+
+$$
+c(t) = A + B e^{-6 t} + cos(19.08 t - \phi) 
+$$

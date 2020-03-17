@@ -6,7 +6,7 @@ x_zero <- c(-1)
 y_zero <- c(0)
 x_pole <- c(-2,-2)
 y_pole <- c(2,-2)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 5,expr)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 5,expr,5)
 
 ```
 
@@ -55,7 +55,7 @@ x_zero <- c()
 y_zero <- c()
 x_pole <- c(-2,-3)
 y_pole <- c(0,0)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 4,expr)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 4,expr,5)
 
 ```
 Vi har:
@@ -216,7 +216,7 @@ bodeplot(fr = c(-3,6),
 #### A.5
 ```{r, echo = FALSE}
 
-expr <- function(s) 26/(s^2+10*s+26)
+expr <- function(s) (26*(s+1))/(s^2+10*s+26)
 x_zero <- c(-1)
 y_zero <- c(0)
 x_pole <- c(-5,-5)
@@ -272,7 +272,7 @@ bodeplot(fr = c(-3,6),
 #### A.6
 
 ```{r, echo = FALSE}
-expr <- function(s) 14/(s^2+3*s+2)
+expr <- function(s) 14/(s^3+3*s^2+2*s)
 x_zero <- c()
 y_zero <- c()
 x_pole <- c(-2,-1,0)

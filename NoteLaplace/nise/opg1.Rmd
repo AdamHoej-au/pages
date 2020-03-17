@@ -1,0 +1,59 @@
+#### 1
+
+Givet: 
+
+$$
+R(s) = \frac{1}{s} \quad G(s)= \frac{10}{s+10}\\
+C(s) = R(s)G(s)
+$$
+
+
+Derfor:
+
+$$ 
+C(s) = \frac{10}{s(s+10)} = \frac{1}{s} - \frac{1}{s+10}
+$$
+Dermed:
+$$ c(t) = 1 - e^{-10t} $$
+
+$$ \tau = \frac{1}{10}$$
+
+```{r, echo = FALSE}
+expr <- function(s) (10)/(s+10)
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-10)
+y_pole <- c(0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 15,expr,2)
+```
+
+#### 2
+
+Givet: 
+
+$$
+R(s) = \frac{1}{s} \quad G(s)= \frac{20}{s+15}\\
+C(s) = R(s)G(s)
+$$
+
+
+
+Derfor:
+
+$$ 
+C(s) = \frac{20}{s(s+15)} = \frac{\frac{20}{15}}{s} - \frac{\frac{20}{15}}{s+10}
+$$
+Dermed:
+$$ c(t) = \frac{20}{15} \left(1 - e^{-15t}\right) $$
+
+$$ \tau = \frac{1}{15}$$
+
+```{r, echo = FALSE}
+expr <- function(s) (20)/(s+15)
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-15)
+y_pole <- c(0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 20,expr,2)
+
+```

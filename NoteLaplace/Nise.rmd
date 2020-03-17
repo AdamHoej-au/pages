@@ -1,5 +1,5 @@
 ---
-title: "Note laplace"
+title: "Nise Transfer functions"
 author: "Adam Høj - 201803767"
 output:
   html_document:
@@ -72,12 +72,12 @@ minMax <- c(-range,range)
   #End of assignment
 
 ## Step plot
-  plot(stepLi,type="l", col="Red", xlim = c(-1, exprrange), panel.first = grid(),
+  plot(stepLi,type="l", col="Red", xlim = c(-0.25, exprrange), panel.first = grid(),
   xlab = "t [s]", ylab = "f(t)",
   main="Stepresponse")
   abline(v = 0, h = 0,lty=2)
  ## Puls plot 
-  plot(pulseLi,type="l", col="Blue", xlim = c(-1, exprrange), panel.first = grid(),
+  plot(pulseLi,type="l", col="Blue", xlim = c(-0.25, exprrange), panel.first = grid(),
   xlab = "t [s]", ylab = "f(t)",
   main="Impulseresponse")
   abline(v = 0, h = 0,lty=2)
@@ -86,136 +86,16 @@ minMax <- c(-range,range)
 ```
 
 
+## Opgaver fra forelæsning  {.tabset .tabset-fade .tabset-pills} 
+
+### Opgave 1 {.tabset .tabset-fade .tabset-pills} 
+
+```{r child = 'nise/opg1.Rmd'}
+```
+
 # {.tabset .tabset-fade .tabset-pills} 
 
-## Opgave fra forelæsninger
+## Opgave fra Nise pdf {.tabset .tabset-fade .tabset-pills} 
 
-```{r child = 'lecture20200316.Rmd'}
+```{r child = 'nise/ex-4-3.Rmd'}
 ```
-
-## Opgave 6 {.tabset .tabset-fade}
-
-### Opgave A {.tabset .tabset-fade}
-
-```{r child = 'opg6/opgaveA.Rmd'}
-```
-
-### Opgave C {.tabset .tabset-fade}
-
-```{r child = 'opg6/opgaveC.Rmd'}
-```
-
-
-## Opgave 9 {.tabset .tabset-fade}
-
-### Opgave A {.tabset .tabset-fade}
-
-> Udfra følgende overføringsfunktioner, angiv pol-nulpunktsdiagrammet, konvergen sområdet og den dominerende pol eller det dominerende polpar
-
-
-#### 1.
-
-```{r child = "opg9/opga01.Rmd"}
-```
-
-#### 2.
-
-```{r child = "opg9/opga02.Rmd"}
-```
-
-#### 3.
-
-```{r child = "opg9/opga03.Rmd"}
-```
-
-#### 4.
-
-```{r child = "opg9/opga04.Rmd"}
-```
-
-#### 5.
-
-```{r child = "opg9/opga05.Rmd"}
-```
-
-#### 6.
-
-```{r child = "opg9/opga06.Rmd"}
-```
-
-#### 7.
-
-```{r child = "opg9/opga07.Rmd"}
-```
-
-#### 8.
-
-```{r child = "opg9/opga08.Rmd"}
-```
-
-#### 9.
-
-```{r child = "opg9/opga09.Rmd"}
-```
-
-#### 10.
-
-```{r child = "opg9/opga10.Rmd"}
-```
-
-#### 11.
-
-```{r child = "opg9/opga11.Rmd"}
-```
-
-#### 12.
-
-```{r child = "opg9/opga12.Rmd"}
-```
-
-### Opgave B {.tabset .tabset-fade}
-
-> Ved hjælp af følgende pol nulpunktsdiagrammer, opskriv overføringsfunktionen, når DC værdien er 3
-
-#### 1.
-
-```{r child = "opg9/opgb01.Rmd"}
-```
-
-#### 2.
-
-```{r child = "opg9/opgb02.Rmd"}
-```
-
-#### 3.
-
-```{r child = "opg9/opgb03.Rmd"}
-```
-
-#### 4.
-
-```{r child = "opg9/opgb04.Rmd"}
-```
-
-#### 5.
-
-```{r child = "opg9/opgb05.Rmd"}
-```
-
-#### 6.
-
-```{r child = "opg9/opgb06.Rmd"}
-```
-
-### Opgave c
-
-> Angiv stepsvaret for systemerne, der har overføringsfunktionerne fra opgave b. Angiv hvis de er stabile, ustabile eller marginalt stabile, desuden om overføringsfunktionerne er kritisk dæmpede, overdæmpede eller underdæmpede.
-
-
-### Opgave D
-
-> Angiv en funktion af frekvensen for fase og amplituden af funktionerne fra opgave b
-
-### Opgave E
-
-> Angiv sinussvaret for systemerne, der har overføringsfunktionerne fra opgave b. Sinussvaret er svaret hvor systemet påtrykkes $v_{ind}(t) = \sin(t)u(t)$.

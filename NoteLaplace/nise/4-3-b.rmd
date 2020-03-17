@@ -1,0 +1,33 @@
+```{r, echo = FALSE}
+expr <- function(s) (900)/(s^2+90*s+900)
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-11.46,-78.54)
+y_pole <- c(0,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 100,expr,2)
+```
+
+$$
+G(s) = \frac{900}{s^2+90*s+900}
+$$
+
+Denne funktion har polerne:
+
+$$ 
+p_1 = -11.46 \quad p_2 = -78.54\\
+\sigma_1 = -11.46 \quad \sigma_2 = -78.54
+$$
+
+Dermed er det et *overdæmpet* respons:
+
+$$ 
+K_1 \cdot e^{-\sigma_1 t} + K_2 \cdot e^{-\sigma_2 t}
+$$
+
+Stepresponset bliver: 
+
+$$ 
+A + K_1 \cdot e^{-11.46 t} + K_2 \cdot e^{-78.54 t}
+$$
+
+
