@@ -1,0 +1,25 @@
+Det er en første ordens funktion, det ses da der intet oversving er, og det er en enklet eksponentiel funktion (Ses på hældning v. $t=0$)
+
+$$ c_{final} = \frac{3}{4} $$
+$$ \tau = 0.0016 \quad c(t) = c_{final} \times 0.63 $$ 
+$$ a = \frac{1}{\tau} = 625$$
+
+Dermed: 
+
+$$ c(t) = 0.75 \left(1-e^{-625t}\right)$$
+
+Det giver:
+$$
+T_v(s) = \mathcal{L}^{-1}\{c(t)\}\\
+T_v(s) = \frac{469}{s+625}
+$$
+
+```{r, echo = FALSE}
+expr <- function(s) (3/4)/(s+625)
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-625)
+y_pole <- c(0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 650,expr,0.016,0.005)
+
+```

@@ -1,0 +1,14 @@
+---
+title: "ASA - TikzCircuits"
+author: "Adam Høj - 201803767"
+output:
+header-includes:
+    - \usepackage{circuitikz}
+    - \usepackage{tikz}
+    - \usepackage{pgfplots}
+html_document:
+    theme: darkly
+    fig_width: 12
+    fig_height: 8
+    fig_caption: true 
+---

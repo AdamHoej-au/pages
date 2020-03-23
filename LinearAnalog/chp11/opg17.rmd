@@ -30,14 +30,6 @@ T_V(s)=\frac{47k\Omega \cdot 0.15 \mu F \cdot s+1}{33k\Omega \cdot0.15 \mu F s+4
 $$
 Her ses det at et enkelt nulpunkt er at finde $z_1 = -141.8 \; rad/s$ og en enkelt pol $p_1 = -83.33 \; rad/s$
 
-```{r, echo = FALSE}
-
-x_zero <- c(-141-8)
-y_zero <- c(0)
-x_pole <- c(-83.33)
-y_pole <- c(0)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole,150)
-```
 
 ### Impulserespons
 

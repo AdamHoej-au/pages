@@ -1,0 +1,107 @@
+
+
+Ud fra det givne kredsløb stilles følgende op:
+1.  
+$$
+T_Y(s) = \frac{I(s)}{V(s)} = \frac{1}{Z(s)}
+$$
+$$
+Z(s) = R + L \cdot s 
+$$
+Derfor:
+$$ 
+T_Y(s) = \frac{1}{R+L\cdot s}
+$$
+
+På ren form:
+
+$$ 
+T_y(s) = \dfrac{\frac{1}{L}}{s+\frac{R}{L}} 
+$$
+
+2. 
+Derfor vil der være en pol i 
+$$
+p_{1,2} = \frac{-R}{L}
+$$ 
+
+3. 
+Dette betyder også at tidskonstanten vil være: $\frac{1}{\frac{R}{L}}$ altså: 
+$$ 
+\tau = \frac{L}{R}
+$$
+
+4. 
+Forsøg med komponenter:
+$$
+R = 1\;\mathrm{k\Omega} \quad L = 1 \;\mathrm{mH} \quad v_{in} = 1 \; \mathrm{V\;DC\; step}
+$$
+
+
+
+
+
+```{r, echo = FALSE}
+
+library("freqr")
+bodeplot(fr = c(1,8),
+        n = c(1, 0),
+        d = c(1, 1000/(1e-3)),
+        highlight = 1000/(1e-3),
+        label = "R/L",
+        )
+```
+
+
+
+
+
+
+<!-- 
+#```{r, echo = FALSE}
+#expr <- function(s) (1/(1000+(1.06e-3)*s))
+#x_zero <- c()
+#y_zero <- c()
+#x_pole <- c(-1000/1.06e-3)
+#y_pole <- c(0)
+#pole_zero_plot(x_zero, y_zero, x_pole, y_pole, max(x_pole)+200,expr,18e-3, 2e-3)
+
+```
+ -->
+
+<!-- n <- seq(1, 6, 1)
+abline(v = n*L/R,lty=1,lwd = 1) -->
+
+5. 
+
+
+```{r, echo= FALSE}
+sciNotation <- function(x, digits = 1) {
+if (length(x) > 1) {
+return(append(sciNotation(x[1]), sciNotation(x[-1])))
+    }
+if (!x) return(0)
+exponent <- floor(log10(x))
+base <- round(x / 10^exponent, digits)
+as.expression(substitute(base %*% 10^exponent,
+list(base = base, exponent = exponent)))
+}
+RL.data <- read.csv(file="../Exercise02/data/RLcircuit.csv")
+#plot(RL.data[1], axes = FALSE, type = "l", frame.plot = TRUE)
+par(lab = c(10, 10, 5))
+plot(RL.data, type="l",xlab="Time [ms]", ylab="Voltage [V]",main="L = 1mH  R = 1 kΩ",axes=FALSE, panel.first = grid())
+#axis(1, at = axTicks(1), label = sciNotation(axTicks(1)*1000, 1))
+axis(1, at = axTicks(1), label = axTicks(1)*1000, 1)
+axis(2, at = axTicks(2))
+abline(h = 0.63, lty=2, col="red")
+abline(h = 0.10, lty=4, col="blue")
+abline(h = 0.90, lty=4, col="green")
+#abline(v = 0, h = 0,lty=2)
+```
+6. Den stationære værdi vil være $\approx$ 1 volt, da ----- ? ? ? 
+<!-- ![Scopebillede fra Digilent Waveforms](/../Exercise02/figs/LR-STEPINPUT.png)
+ -->
+
+
+
+

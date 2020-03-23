@@ -73,18 +73,3 @@ Det ses at funktionen har ét nulpunkt: $Z_1 = -909.1 \; rad/s$
 Desuden er der to poler: $p_1 = -967.1\; rad/s \quad p_2 = -10000\; rad/s$
 
 
-```{r, echo = FALSE,out.height=c('50%', '50%'), fig.show='hold'}
-
-x_zero <- c(-909.1)
-y_zero <- c(0)
-x_pole <- c(-967.1,-10000)
-y_pole <- c(0,0)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole,1000)
-
-x_zero <- c(-909.1)
-y_zero <- c(0)
-x_pole <- c(-967.1,-10000)
-y_pole <- c(0,0)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole,10000)
-```
-

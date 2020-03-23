@@ -1,0 +1,80 @@
+> Find the driving point impedance seen by the voltage source in Figure P11–5 and the voltage transfer function T_V(s) = V_2(s)/V_1(s).
+
+#### Driving pointe impedance $Z_i$
+Vi har: 
+
+$$ 
+-V_1(s) + I_1(s) \cdot\left( R + \frac{1}{Cs}||L s\right) = 0
+$$
+
+Dermed: 
+
+$$
+Z_i(s) = \frac{V_1(s)}{I_1(s)} = R + \frac{\frac{1}{Cs}\cdot Ls}{\frac{1}{Cs} + Ls}
+$$
+
+$$
+Z_i(s) = \frac{V_1(s)}{I_1(s)} = \left(\frac{1}{Ls}\cdot Cs\right)^{-1} + R
+$$
+
+Dette kan omskrives til: 
+
+$$
+\frac{CLRs^2+Ls+R}{CLs^2+1}
+$$
+
+
+#### Voltage transfer function $T_v(s)$
+
+Std. spændingsdeler formel: 
+
+$$
+V_2(s) = V_1(s) \cdot \frac{\frac{1}{Cs}||Ls}{R+\frac{1}{Cs}||Ls} = V_1(s) \cdot \frac{Ls}{R\left(CLs^2+1\right)+Ls}
+$$
+
+Dermed:
+
+$$ 
+T_v(s) = \frac{V_2(s)}{V_1(s)} = \frac{Ls}{R\left(CLs^2+1\right)+Ls} = \frac{Ls}{CLRs^2+Ls+R}
+$$
+
+
+#### Resultater: 
+
+$$
+\boxed{
+Z_i(s) = \frac{CLRs^2+Ls+R}{CLs^2+1} \; \mathrm{\Omega}
+}
+$$
+$$
+\boxed{
+  \; T_v(s) = \frac{Ls}{CLRs^2+Ls+R}
+    }
+$$
+
+
+#### Forsøg med værdier.
+
+$$
+R = 1000\;\mathrm{\Omega} \quad L = 1\;\mathrm{H} \quad C = 1\mathrm{µF}
+$$
+
+$$
+Z_i(s) = \frac{10^3\left(s^2+10^3s+10^6\right)}{s^2+10^6} \; \mathrm{\Omega}
+$$
+
+$$
+  \; T_v(s) = \frac{10^3s}{s^2+10^3s+10^6}
+$$
+
+
+```{r, echo=FALSE}
+expr <- function(s) (10^3*s)/(s^2+10^3*s+10^6)
+x_zero <- c(0)
+y_zero <- c(0)
+x_pole <- c(-500,-500)
+y_pole <- c( 500 * sqrt(3), -500 * sqrt(3))
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 500*sqrt(3)+20,expr, exprrange = 0.020,exprmin = 0.0005)
+```
+
+

@@ -24,8 +24,10 @@ x_zero <- c()
 y_zero <- c()
 x_pole <- c(-10)
 y_pole <- c(0)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 15,expr,2)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 15,expr,1)
 ```
+
+
 
 #### 2
 
@@ -54,6 +56,6 @@ x_zero <- c()
 y_zero <- c()
 x_pole <- c(-15)
 y_pole <- c(0)
-pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 20,expr,2)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 20,expr,1)
 
 ```

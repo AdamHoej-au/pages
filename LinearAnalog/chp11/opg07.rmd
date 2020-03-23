@@ -31,3 +31,14 @@ $$
 T_V(s)=2RCs+2
 }
 $$
+
+Med værdierne: $R = 100\;\mathrm{\Omega} \quad C = 0.01\mathrm{µF}$:
+
+```{r, echo=FALSE}
+expr <- function(s) 2*100*0.01e-6*s+2
+x_zero <- c(-1/(2*0.01e-6*100))
+y_zero <- c(0)
+x_pole <- c(0)
+y_pole <- c(0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 500*sqrt(3)+20,expr, exprrange = 0.1,exprmin = 0.00005)
+```

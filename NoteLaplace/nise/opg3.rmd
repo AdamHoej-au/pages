@@ -1,0 +1,51 @@
+Ud fra oversvinget ses det at funktionen er en 2. ordens.
+
+Ud fra grafen aflæses $T$ som værende:
+
+$$
+T = t_2 - t_1 \approx 0.0078 - 0.0024 = 5.3 \;\mathrm{ms}
+$$
+
+Dette giver:
+
+$$
+\omega_n = \frac{2\pi}{0.0053} = 1186\; \mathrm{rad/s}
+$$
+
+$\tau$ findes ved det punkt hvor kurven er ved $63\% (63.2\%)$ af $c_{final}$.
+
+Dette punkt aflæses somværende $\approx 0.0016$. Dette betyder at der vil være en pol i :
+
+$$
+p_{1,2} = \frac{1}{\tau} = 625 \; \mathrm{rad/s}
+$$
+
+Dette vil desuden være konstanten $a$.
+
+Nu kan $\zeta$ findes:
+
+$$
+\zeta = \frac{a}{2\cdot\omega_n} = \frac{625}{2 \cdot 1186}
+$$
+
+Hvorfor:
+
+$$
+c(t) =
+1 - \frac{1}{\sqrt{1-\zeta^2}}
+e^{-\zeta\omega_n t}
+\cos\left(
+\omega_n \sqrt{1-\zeta^2} - \arctan\left(\frac{\zeta}{\sqrt{1-\zeta^2}}\right)
+\right)
+$$
+
+
+```{r, echo = FALSE}
+expr <- function(s) (1186^2)/(s^2+2*(380/2*1186)*1186*s+1186^2)
+x_zero <- c()
+y_zero <- c()
+x_pole <- c(-380,-380)
+y_pole <- c(-1186,1186)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 1200,expr,0.016,0.005)
+
+```
