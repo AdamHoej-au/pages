@@ -1,0 +1,142 @@
+> A circuit is needed to realize the transfer function listed below.
+
+- Design the circuit using two OP AMPs.
+- Design the circuit using only one OP AMP.
+- Design the circuit using no OP AMPs.
+
+  **_In all cases, scale the circuit so that all parts use practical values._**
+
+$$
+T_v(s) = \pm \frac{(s+125)\cdot(s+500)}{(s+250)\cdot(s+1000)}
+$$
+
+```{r,echo=FALSE}
+library("freqr")
+bodeplot(fr = c(0, 7), 
+n = c(1, 625, 62500), 
+d = c(1, 1250,250000))
+```
+
+Det at: 
+Poler: 
+$$
+p_1 = -250 \quad p_2 = -1000
+$$
+
+Nulpunkter:
+$$
+z_1 = -125 \quad z_2 = -500
+$$
+```{r, echo = FALSE}
+expr <- function(s) (+(s+125)*(s+500))/((s+250)*(s+1000))
+x_zero <- c(-125,-500)
+y_zero <- c(0,0)
+x_pole <- c(-250,-1000)
+y_pole <- c(0,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 1200,expr,0.03,0.00005)
+```
+
+
+
+
+Bemærkelses værdigt er det vel at nulpunkterne ligger i en faktor $\frac{1}{2}$.
+
+Omskrivning giver:
+
+$$
+T_v(s)= \pm \frac{s^2+625s+62500}{s^2+1250s+250000}
+$$
+
+$$
+T_v(s)=\pm \frac{s+625+\frac{62500}{s}}{s+1250+\frac{250000}{s}}
+$$
+#### Spændingsdeler 
+
+Vi har ved en std. spændingsdeler: 
+$$
+V_2(s) = V_1(s) \cdot \frac{Z_2}{Z_1+Z_2}
+$$
+
+Hvor: 
+$$
+Z_1 = s+625+\frac{62500}{s} \quad Z_2 = s+1250+\frac{250000}{s} - s+625+\frac{62500}{s} 
+$$
+
+$$
+Z_2 = \frac{312500}{s}+1875
+$$
+
+
+
+Dette giver at kredsløbet ville kunne bygges af flg: 
+
+$$
+Z_1 = 1H + 625\Omega + \frac{1}{62500}F = 1H + 625\Omega + 16µF \quad Z_2 = \frac{1}{312500}+1875\Omega = 3.2µF + 1875\Omega
+$$
+
+
+$$
+R_1 = 625 \Omega \quad
+R_2 = 1875 \Omega \quad
+C_1 = 16µF \quad 
+C_2 = 3.2µF \quad
+L_1 = 1H
+$$
+**Normal værdier... $L_1 = 1mH$**
+
+$$
+R_1 = 62.5\Omega \quad
+R_2 = 187.5 \Omega \quad
+C_1 = 160µF \quad 
+C_2 = 32µF \quad
+L_1 = 100mH
+$$
+
+
+
+
+
+#### Single OP-AMP.
+
+##### Non inverter: 
+$$
+V_2(s) = V_1(s) \cdot \frac{Z_1+Z_2}{Z_2}
+$$
+
+Hvor den interessante del er : 
+
+$$
+\frac{Z_1+Z_2}{Z_2}
+$$
+
+Derfor: 
+$$
+\frac{Z_1+Z_2}{Z_2} = \pm \frac{(s+125)\cdot(s+500)}{(s+250)\cdot(s+1000)}
+$$
+
+$$
+\frac{Z_1+Z_2}{Z_2} = \pm \frac{s+625+\frac{62500}{s}}{s+1250+\frac{250000}{s}}
+$$
+
+
+##### Inverterende:
+
+$$
+V_2(s) = V_1(s) \cdot (-\frac{Z_2}{Z_1})
+$$
+Dette giver: 
+
+$$
+\frac{-Z_2}{Z_1} = \pm \frac{s+625+\frac{62500}{s}}{s+1250+\frac{250000}{s}}
+$$
+
+$$
+Z_2 = -(s + 625 + \frac{1}{62500}) =-(1H + 625 \Omega + 16µF)
+$$
+
+$$
+Z_1 = s + 1250 + \frac{1}{250000} - Z_2= 2H + 1875 \Omega + 20µF
+$$
+
+#### Dual OP-AMP.
+

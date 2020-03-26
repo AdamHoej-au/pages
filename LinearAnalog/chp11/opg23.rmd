@@ -1,0 +1,57 @@
+Vi har : 
+
+
+$$
+T(s) = \frac{200}{s+1000}
+$$
+
+Omskrivning:
+
+$$
+T(s) = \frac{\frac{200}{s}}{\frac{1000}{s}+1}
+$$
+
+
+Giver:
+
+$$
+\Z_1 = \frac{1000}{s}+1 - \frac{200}{s} \quad Z_2 = \frac{200}{s}
+$$
+$$
+\Z_1 = \frac{800}{s}+1 - \frac{200}{s} \quad Z_2 = \frac{200}{s}
+$$
+
+Derfor :
+$$
+Z_1 = \frac{1}{800}µF + 1 \Omega \quad Z_2 = \frac{1}{200µF}
+$$
+
+
+Skalering til $C_1 = 0.5µF$
+
+$$
+\frac{1}{800}µF \cdot \frac{1}{k} = 0.5µF \to k = 2500
+$$
+
+Derfor: 
+
+$$
+C_1 = 0.5µF \quad C_2 = 2µF  \quad R = 2500\Omega
+$$
+<!-- 
+Forsøg med : 
+
+R - C | C 
+
+Spændingsdeler med RC2 i serie og udgang over C2
+
+$$
+T_v(s) = \frac{\frac{1}{C_2\cdot s}}{\frac{1}{C_2\cdot s}+R+\frac{1}{C_1\cdot s}} = \frac{C_1}{C_1C_2Rs+C_1+C_2} = \frac{\frac{1}{C_2R}}{s+\frac{C_1+C_2}{C_1C_2R}}
+$$
+
+
+Vha. frekvens omskrivning:
+
+$$
+T(\omega j) = \frac{200}{\omega j + 200} = \frac{40000}{\omega^2+40000}-\frac{200\omega}{\omega^2+40000} j
+$$ -->

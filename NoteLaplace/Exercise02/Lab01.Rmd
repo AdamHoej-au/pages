@@ -1,0 +1,5 @@
+### Den påtrykte stepspænding.
+
+Ud fra osciloskopbilledet ses det indgangsspændingen er $\boxed{5\mathrm{V}}$
+
+Som vist på 

@@ -1,0 +1,46 @@
+>Find the current transfer function T_I(s) = I_2(s)/I_1(s) in Figure P11–13. Select values of R and L so that T_I(s) has a pole at s = - 377 rad/s
+
+Dette er en std. strømdeler.
+
+Derfor gælder:
+
+$$ 
+T_I(s) = \frac{I_2(s)}{I_1(s)} = \frac{Y_2(s)}{Y_1(s)+Y_2(s)}
+$$
+
+Hvor:
+$$ 
+Y_1 = \frac{1}{R} \quad \frac{1}{Y_2 = Ls + 2R}
+$$
+
+Dette giver: 
+
+$$ 
+\frac{I_2(s)}{I_1(s)} = \frac{\frac{1}{Y_2 = Ls + 2R}}{\frac{1}{R}+\frac{1}{Y_2 = Ls + 2R}}
+$$
+
+En omskrivning giver: 
+
+$$ 
+\frac{Y_2(s)}{Y_1(s)+Y_2(s)} = \frac{Z_1(s)}{Z_1(s)+Z_2(s)}
+$$
+
+Derfor:
+
+$$ 
+T_I(s)= \frac{R}{3R+Ls} = \frac{\frac{R}{L}}{\frac{3R}{L}+s}
+$$
+
+Dette giver en pol i $-\frac{3R}{L}\;\mathrm{rad/s}$.
+
+#### Polen i -377...
+
+Der vælges en modstand: $4k7\Omega$.
+
+Derfor:
+
+$-377 = -\frac{3\cdot 4k7}{L} \to L =\frac{3 \dot 4k7}{377} = 37.4 \;\mathrm{H}$
+
+$$
+T_I(s)= \frac{\frac{4k7\Omega}{37.4\;\mathrm{H}}}{\frac{3\cdot4k7\Omega}{37.4\;\mathrm{H}}+s}
+$$

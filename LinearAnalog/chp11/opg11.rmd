@@ -1,0 +1,51 @@
+> Find the voltage transfer function T_V(s) = V_2(s) / V_1(s) in Figure P11–11. 
+> Select values of R and C so that T_V(s) has a pole at s = -100 krad/s.
+
+#### Voltage transfer function $T_v(s)$
+
+
+Da det er en ikke-inverterende operationsforstærker gælder flg:
+$$ 
+V_2 = V_1 \cdot \frac{Z_1+Z_2}{Z_2}
+$$
+
+Hvor: 
+
+$$
+Z_1 = R||C \quad Z_2 = R 
+$$
+
+Dermed: 
+
+$$
+T_v(s) ) \frac{\left(\frac{1}{R}+Cs\right)^1+R}{R} = \frac{RCs+2}{RCs+1} = \frac{s + \frac{2}{RC}}{s+\frac{1}{RC}}
+$$
+
+#### Poler i systemet.
+
+For at få en pol i $-100k\;\mathrm{rad/s}$ kigges i nævneren: $s + \frac{1}{RC}$ - hvilket viser at der findes en pol i $\frac{-1}{RC}$.
+
+Derfor: 
+
+R vælges:
+$$
+R = 100 \;\mathrm{\Omega}
+$$
+C findes: 
+$$ 
+-100.000 = \frac{-1}{100\cdot C} \to C  = 100\mathrm{nF}
+$$
+
+
+
+
+```{r, echo=FALSE}
+R <- 100
+C <- 100e-9
+expr <- function(s) (s+(2/(R*C)))/(s+(1/(R*C)))
+x_zero <- c(-(2/(R * C)))
+y_zero <- c(0)
+x_pole <- c(-(1/(R*C)))
+y_pole <- c(0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 120e3,expr, exprrange = 8*(1/(R*C))^(-1),exprmin = (1/(R*C))^(-1))
+```

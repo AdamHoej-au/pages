@@ -99,9 +99,14 @@ abline(h = 0.90, lty=4, col="green")
 #abline(v = 0, h = 0,lty=2)
 ```
 6. Den stationære værdi vil være $\approx$ 1 volt, da ----- ? ? ? 
+
 <!-- ![Scopebillede fra Digilent Waveforms](/../Exercise02/figs/LR-STEPINPUT.png)
  -->
 
 
+
+
+
+7. 
 
 

@@ -45,3 +45,17 @@ $$
 T_V(s)=\frac{RCs}{LCs^2 + RCs +1}
 }
 $$
+
+
+
+```{r, echo=FALSE}
+R <- 1e3
+C <- 1e-6
+L =  1e-3
+expr <- function(s) (R*C*s)/(L*C*s^2+R*C*s+1)
+x_zero <- c(0)
+y_zero <- c(0)
+x_pole <- c(-1.001e3,-999e3)
+y_pole <- c(0,0)
+pole_zero_plot(x_zero, y_zero, x_pole, y_pole, 120e3,expr, exprrange = 0.000005,exprmin =0.0000001)
+```

@@ -1,0 +1,60 @@
+> The circuit in Figure P11–37 is in the steady state with i1(t) = 10 cos 50kt mA, R1 = 100 ohm, R2 = 400 ohm, and L = 100 mH. 
+> Find i2SS(t). 
+> Repeat for i1(t) = 10 cos 5kt mA. Where is the pole located?
+
+
+Vi har: 
+
+$$
+i(t)=10 \cos 50kt \; \mathrm{mA} \quad R_1 = 100 \Omega \quad R_2 = 400 \quad \omega L = 100 \mathrm{mH}
+$$
+
+Derfor:
+
+$$
+\frac{I_2(s)}{I_1(s)} = \frac{Z_1}{Z_1+Z_2}
+$$
+
+Hvor: 
+$$
+\quad Z_1 = 100 \Omega \quad Z_2 = 400 \omega + 100 \mathrm{mH} s
+$$
+
+Dermed: 
+
+$$
+T_I(\omega j)= \frac{100}{500+100\cdot10^{-3}s} = \frac{1000}{\omega j+5000} = \frac{5\cdot10^6}{w^2+25\cdot10^6}- j \frac{1000\omega}{\omega^2+25\cdot10^6}
+$$
+
+Herefter findes længden..
+
+$$
+|T_I(\omega)| = \frac{1000}{\sqrt{w^2+25\cdot10^6}} \quad \angle T_v(\omega) = -\arctan(200\cdot 10^6 \omega)
+$$
+
+
+Med $\omega = 50k\; rad/s$:
+
+$$
+|T_v(50k)| = 19.9\cdot 10^{-3} \quad \angle T_v(50k) = -84.29
+$$
+
+Derfor:
+
+$$ \boxed{
+i_2(t) = 199 \cos(50kt -84.29) µA
+}
+$$
+
+Med $\omega = 5k\; rad/s$:
+
+$$
+|T_v(5k)| = 141.4\cdot 10^{-3} \quad \angle T_v(5k) = 135
+$$
+
+Derfor:
+
+$$ \boxed{
+i_2(t) = 1.414 \cos(5kt+135) mA
+}
+$$

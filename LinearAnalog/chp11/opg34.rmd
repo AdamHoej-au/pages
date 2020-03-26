@@ -1,0 +1,68 @@
+> The circuit in Figure P11–34 is in the steady state with v1(t) = 5 cos 1414.21t V. Find v2_SS(t). Repeat for v1(t) = 5cos 1 kt V. 
+> And without doing any calculations, repeat for v_1(t) = 5 V.
+
+
+Vi har: 
+
+$$ 
+v_{1ss}(t) = 5 \cos(1414.21t)
+$$
+
+Dette giver:
+$$
+v_A = 5 \quad \omega = 1414.21
+$$
+
+Transfer funktionen der påvirker systemet:
+
+$$ 
+T_v(s) = \frac{Ls+\frac{1}{Cs}}{R+Ls+\frac{1}{Cs}}
+$$
+
+Med værdier: 
+
+$$ 
+T_v(s) = \frac{25\;\mathrm{mH}s+\frac{1}{20\;\mathrm{µF}s}}{100\;\mathrm{\Omega}+25\;\mathrm{mH}s+\frac{1}{20\;\mathrm{µF}s}} = \frac{s^2+2\cdot10^6}{s^2+4\cdot10^3s+2\cdot10^6}
+$$
+
+Omskrivning til frekvensdomænet:
+
+$$ 
+T_v(\omega j)  = \frac{\omega j^2+2\cdot10^6}{\omega j^2+4\cdot10^3\omega j+2\cdot10^6}
+$$
+
+Amplitude og fase: 
+$$
+|T_v(s)|= \frac{|\omega^2-2\cdot10^6|}{\sqrt{\omega^4+12\cdot 10^6 \omega^2+4\cdot10^{12} }}
+$$
+
+$$
+\angle T_v(s) = \arctan\left( \frac{4000\omega}{\omega^2-2\cdot 10^6} \right)
+$$
+
+Derfor kan følgende opskrives:
+
+$$
+v_{2ss}= v_A |T_v(\omega j)|\cos(\omega t + \phi + \angle{T(j\omega)})\; \mathrm{V}
+$$
+
+Altså: 
+$$
+v_{2ss}= 5 \cdot |T_v(\omega j)| \cdot \cos(1414.21 t + \angle{T(j\omega)})\; \mathrm{V}
+$$
+
+Med $\omega = 1414.21$
+$$
+|T_v(s)| = 1.781\cdot 10^{-6} \quad \angle T_v(s) = -90
+$$
+$$
+v_{2ss}= 5\cdot 1.781\cdot 10^{-6} \cdot \cos(1414.21 t -90) = 8.91\cos(1414.21-90)\; \mathrm{µV}
+$$
+
+Med $\omega = 1000$
+$$
+|T_v(s)| = 242.5\cdot 10^{-3} \quad \angle T_v(s) = -76.96
+$$
+$$
+v_{2ss}= 5\cdot 242.5\cdot 10^{-3} \cdot \cos(1000 t -76.96) = 1.213\cos(1000-76.96)\; \mathrm{µV}
+$$

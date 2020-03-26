@@ -1,0 +1,52 @@
+>Design a passive circuit to realize the transfer function below using only resistors, capacitors, and inductors. Scale the circuit so that all inductors are 50 mH or less.
+
+
+Vi har: 
+
+$$
+T_v(s)=\frac{s^2}{(s+2000)^2}
+$$
+
+En omskrivning giver:
+
+
+
+$$
+T_V(s)=\frac{s^2}{s+4000s+4000000} = \frac{s}{s+4000+\frac{4000000}{s}}
+$$
+
+$$
+Z_2 = s \quad Z_1 = s+4000+\frac{4000000}{s}-s = 4000+\frac{4000000}{s}
+$$
+
+$$
+Z_2 = 1H \quad Z_1 = 4k\Omega + \frac{1}{4000000} = 4k\Omega + 250\;\mathrm{nF}
+$$
+
+Spændingsdeler: 
+$$
+T_v(s) = \frac{Z_2}{Z_1+Z_2}
+$$
+
+Omskaleret så $L < 50mH$
+
+$$
+Z_2\cdot k = 50mH \to k = 0.050
+$$
+$$
+Z_1 \cdot k = 4 k\Omega \cdot 0.05 + 250\;\mathrm{nF}\cdot \frac{1}{0.05}
+$$
+
+Derfor: 
+
+Spændingsdeler: 
+$$
+T_v(s) = \frac{Z_2}{Z_1+Z_2}
+$$
+Hvor 
+
+$$
+\boxed{
+Z_1 = 200\Omega + 5\;\mathrm{µF} \qquad Z_2 = 50\;\mathrm{mH}
+}
+$$

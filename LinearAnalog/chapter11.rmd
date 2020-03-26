@@ -14,6 +14,7 @@ output:
 # {.tabset .tabset-fade .tabset-pills}
 
 ```{r, echo=FALSE}
+
 library(pracma)
 library("plotrix")
 
@@ -84,9 +85,9 @@ par(pty="m")
   axis(1, at = axTicks(1))
 axis(2, at = axTicks(2))
   abline(v = 0, h = 0,lty=2)
+  abline(v = 0, h = 0,lty=2)
 n <- seq(1, 6, 1)
-abline(v = n*(-max(x_pole)^{-1}),lty=1,lwd = 3,col = rgb(0, 0, 0, alpha = 0.2))
-
+abline(v = n*(-max(x_pole)^{-1}),lty=1,lwd = 3,col = rgb(0, 0, 0, alpha = 0.2)) 
 
  ## Puls plot 
   plot(pulseLi,type="l", col="Blue", xlim = c(-exprmin, exprrange), panel.first = grid(),
@@ -98,9 +99,8 @@ abline(v = n*(-max(x_pole)^{-1}),lty=1,lwd = 3,col = rgb(0, 0, 0, alpha = 0.2))
 axis(2, at = axTicks(2))
   abline(v = 0, h = 0,lty=2)
 n <- seq(1, 6, 1)
-abline(v = n*(-max(x_pole)^{-1}),lty=1,lwd = 3,col = rgb(0, 0, 0, alpha = 0.2))
- }
-
+abline(v = n*(-max(x_pole)^{-1}),lty=1,lwd = 3,col = rgb(0, 0, 0, alpha = 0.2)) 
+}
 ```
 
 ## Info
@@ -141,6 +141,18 @@ Når der snakkes op-amp konfigurationer, refereres der til de her to:
 ```{r child = "chp11/opg09.Rmd"}
 ```
 
+## Opgave 11
+
+![](figs/1111.png)
+```{r child = "chp11/opg11.Rmd"}
+```
+
+## Opgave 13
+
+![](figs/1113.png)
+```{r child = "chp11/opg13.Rmd"}
+```
+
 ## Opgave 15
 
 ![](figs/1115.png)
@@ -153,8 +165,35 @@ Når der snakkes op-amp konfigurationer, refereres der til de her to:
 ```{r child = "chp11/opg17.Rmd"}
 ```
 
+## Opgave 34
+
+![](figs/1134.png)
+```{r child = "chp11/opg34.Rmd"}
+```
+
 ## Opgave 35
 
 ![](figs/1135.png)
 ```{r child = "chp11/opg35.Rmd"}
+```
+
+
+## Opgave 37
+
+![](figs/1137.png)
+```{r child = "chp11/opg37.Rmd"}
+```
+
+
+## Opgave 70 
+
+```{r child = "chp11/opg70.Rmd"}
+```
+
+## Opgave 71 
+
+![Funktionen vist som spændingdeler.](figs/1171-3.png)
+
+
+```{r child = "chp11/opg71.Rmd"}
 ```
