@@ -15,10 +15,10 @@ $$
 Giver:
 
 $$
-\Z_1 = \frac{1000}{s}+1 - \frac{200}{s} \quad Z_2 = \frac{200}{s}
+Z_1 = \frac{1000}{s}+1 - \frac{200}{s} \quad Z_2 = \frac{200}{s}
 $$
 $$
-\Z_1 = \frac{800}{s}+1 - \frac{200}{s} \quad Z_2 = \frac{200}{s}
+Z_1 = \frac{800}{s}+1 - \frac{200}{s} \quad Z_2 = \frac{200}{s}
 $$
 
 Derfor :
