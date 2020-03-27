@@ -208,3 +208,18 @@ Når der snakkes op-amp konfigurationer, refereres der til de her to:
 ```{r child = "chp11/opg37.Rmd"}
 
 ```
+
+
+## Opgave 70
+
+```{r child = "chp11/opg70.Rmd"}
+
+```
+
+## Opgave 71
+
+![Funktionen vist som spændingdeler.](figs/1171-3.png)
+
+```{r child = "chp11/opg71.Rmd"}
+
+```
