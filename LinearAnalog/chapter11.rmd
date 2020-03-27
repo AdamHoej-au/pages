@@ -2,6 +2,7 @@
 title: "Chapter 11"
 author: "Adam Høj - 201803767"
 ---
+
 # {.tabset .tabset-fade .tabset-pills}
 
 ```{r, echo=FALSE}
@@ -154,6 +155,11 @@ Når der snakkes op-amp konfigurationer, refereres der til de her to:
 
 ![](figs/1117.png)
 ```{r child = "chp11/opg17.Rmd"}
+```
+
+## Designopgave 23
+
+```{r child = "chp11/opg23.Rmd"}
 ```
 
 ## Opgave 34

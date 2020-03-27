@@ -27,6 +27,7 @@ Nulpunkter:
 $$
 z_1 = -125 \quad z_2 = -500
 $$
+
 ```{r, echo = FALSE}
 expr <- function(s) (+(s+125)*(s+500))/((s+250)*(s+1000))
 x_zero <- c(-125,-500)
@@ -50,6 +51,7 @@ $$
 $$
 T_v(s)=\pm \frac{s+625+\frac{62500}{s}}{s+1250+\frac{250000}{s}}
 $$
+
 #### Spændingsdeler 
 
 Vi har ved en std. spændingsdeler: 
@@ -82,6 +84,7 @@ C_1 = 16µF \quad
 C_2 = 3.2µF \quad
 L_1 = 1H
 $$
+
 **Normal værdier... $L_1 = 1mH$**
 
 $$
