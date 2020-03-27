@@ -114,3 +114,97 @@ Når der snakkes op-amp konfigurationer, refereres der til de her to:
 ```{r child = "chp11/20200310.Rmd"}
 
 ```
+
+## Opgave 3
+
+![](figs/1103.png)
+
+```{r child = "chp11/opg03.Rmd"}
+
+```
+
+## Opgave 5
+
+![](figs/1105.png)
+
+```{r child = "chp11/opg05.Rmd"}
+
+```
+
+## Opgave 7
+
+![](figs/1107.png)
+
+```{r child = "chp11/opg07.Rmd"}
+
+```
+
+## Opgave 9
+
+![](figs/1109.png)
+
+```{r child = "chp11/opg09.Rmd"}
+
+```
+
+## Opgave 11
+
+![](figs/1111.png)
+
+```{r child = "chp11/opg11.Rmd"}
+
+```
+
+## Opgave 13
+
+![](figs/1113.png)
+
+```{r child = "chp11/opg13.Rmd"}
+
+```
+
+## Opgave 15
+
+![](figs/1115.png)
+
+```{r child = "chp11/opg15.Rmd"}
+
+```
+
+## Opgave 17
+
+![](figs/1117.png)
+
+```{r child = "chp11/opg17.Rmd"}
+
+```
+
+## Designopgave 23
+
+```{r child = "chp11/opg23.Rmd"}
+
+```
+
+## Opgave 34
+
+![](figs/1134.png)
+
+```{r child = "chp11/opg34.Rmd"}
+
+```
+
+## Opgave 35
+
+![](figs/1135.png)
+
+```{r child = "chp11/opg35.Rmd"}
+
+```
+
+## Opgave 37
+
+![](figs/1137.png)
+
+```{r child = "chp11/opg37.Rmd"}
+
+```
