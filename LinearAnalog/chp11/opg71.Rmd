@@ -1,10 +1,10 @@
 > A circuit is needed to realize the transfer function listed below.
-
-- Design the circuit using two OP AMPs.
-- Design the circuit using only one OP AMP.
-- Design the circuit using no OP AMPs.
-
-  **_In all cases, scale the circuit so that all parts use practical values._**
+>
+>- Design the circuit using two OP AMPs.
+>- Design the circuit using only one OP AMP.
+>- Design the circuit using no OP AMPs.
+>
+> **In all cases, scale the circuit so that all parts use practical values.**
 
 $$
 T_v(s) = \pm \frac{(s+125)\cdot(s+500)}{(s+250)\cdot(s+1000)}
