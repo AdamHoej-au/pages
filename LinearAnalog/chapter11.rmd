@@ -1,16 +1,13 @@
 ---
-title: "Chapter 11 - Linear Circuits"
+title: "Chapter 11"
 author: "Adam Høj - 201803767"
 output:
- -html_document:
-  -theme: "darkly"
-  -toc: true
-  -toc_depth: 3
-  -fig_width: 6
-  -fig_height: 6
-  -fig_caption: true 
+  html_document:
+    theme: darkly
+    fig_width: 12
+    fig_height: 8
+    fig_caption: true 
 ---
-
 # {.tabset .tabset-fade .tabset-pills}
 
 ```{r, echo=FALSE}
